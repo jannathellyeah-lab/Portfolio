@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Personal Brands | Jannat</title>
+
+  <!-- shared stylesheet & fonts -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- page-specific CSS (same as social.html for consistency) -->
+  <style>
+    .container { max-width: 1100px; margin: 1.75rem auto; padding: 0 1.25rem; }
+
+    .back-btn { margin: 1.25rem; }
+    .back-btn a { text-decoration: none; color: inherit; font-weight:600; }
+
+    .hero.hero-alt { padding-bottom: 1.25rem; }
+
+    .accordion {
+      background: transparent;
+      margin-bottom: 1.25rem;
+      border-radius: 12px;
+      overflow: visible;
+    }
+
+    .accordion-header {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 0.9rem 1.1rem;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .accordion-header:hover { background: var(--secondary); }
+
+    .accordion-header .chev { transition: transform .22s ease; }
+    .accordion.open .accordion-header .chev { transform: rotate(180deg); }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 8px;
+      margin-top: 0.6rem;
+      padding: 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .36s cubic-bezier(.2,.9,.2,1), padding .2s ease;
+    }
+
+    .accordion.open .panel { padding: 1rem; }
+
+    .panel .desc {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text-dark);
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .panel img {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      margin: 0.9rem auto;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.06);
+      object-fit: contain;
+    }
+
+    @media (max-width: 900px){
+      .panel img { max-width: 90%; }
+    }
+    @media (max-width: 480px){
+      .panel img { max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BACK BUTTON -->
+  <div class="back-btn">
+    <a href="aboutwork.html">← Back</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero hero-alt">
+    <div class="hero-center">
+      <h1>PERSONAL BRANDS</h1>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <p style="text-align:center; font-family:'DM Sans', sans-serif; margin-bottom:1.5rem;">
+      Content for company personnel that generates interactivity, influence and reach
+    </p>
+
+    <!-- CEO Section -->
+    <h2 style="text-align:center; margin-top:1.25rem; color:var(--secondary);">
+      For the Chief Executive Officer (CEO)
+    </h2>
+
+    <!-- CEO Posts -->
+    <section class="accordion"><button class="accordion-header"><span>Post number 1</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/ceo1.png"><img src="images/ceo2.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 2</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/ceo3.png"><img src="images/ceo4.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 3</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/ceo5.png"><img src="images/ceo6.png"><img src="images/ceo7.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 4</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/ceo8.png"><img src="images/ceo9.png"><img src="images/ceo10.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 5 - Part of The Ray Dalio Series</span><span class="chev">▾</span></button>
+      <div class="panel"><div class="desc">(A series of posts as a tribute to the extensive career of one of the biggest investors and hedge fund managers, the co-chief investment officer and founder of the world's largest hedge fund, Bridgewater Associates)</div><img src="images/ceo11.png"><img src="images/ceo12.png"><img src="images/ceo13.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 6 - Part of The Ray Dalio Series</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/ceo14.png"><img src="images/ceo15.png"><img src="images/ceo16.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 7 - Part of The Ray Dalio Series</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/ceo17.png"><img src="images/ceo18.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 8 - Part of The Ray Dalio Series</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/ceo19.png"><img src="images/ceo20.png"><img src="images/ceo21.png"></div></section>
+
+
+    <!-- Sales/International Relations -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);">
+      For the Head of International Relations / Sales Development Manager
+    </h2>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 1</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/sdm1.png"><img src="images/sdm2.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 2</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/sdm3.png"><img src="images/sdm4.png"><img src="images/sdm5.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 3</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/sdm6.png"><img src="images/sdm7.png"><img src="images/sdm8.png"></div></section>
+
+
+    <!-- VP 3D -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);">
+      For the Vice President - 3D
+    </h2>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 1</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/vp1.png"><img src="images/vp2.png"><img src="images/vp3.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 2</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/vp4.png"><img src="images/vp5.png"><img src="images/vp6.png"><img src="images/vp7.png"><img src="images/vp8.png"><img src="images/vp9.png"><img src="images/vp10.png"><img src="images/vp11.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 3</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/vp12.png"><img src="images/vp13.png"><img src="images/vp14.png"></div></section>
+
+
+    <!-- HR Manager -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);">
+      For the Human Resources Manager
+    </h2>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 1</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/hr1.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 2</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/hr2.png"></div></section>
+
+    <section class="accordion"><button class="accordion-header"><span>Post number 3</span><span class="chev">▾</span></button>
+      <div class="panel"><img src="images/hr3.png"><img src="images/hr4.png"></div></section>
+
+  </main>
+
+  <!-- accordion script -->
+  <script>
+    document.querySelectorAll('.accordion').forEach(acc => {
+      const btn = acc.querySelector('.accordion-header');
+      const panel = acc.querySelector('.panel');
+
+      panel.style.maxHeight = null;
+
+      btn.addEventListener('click', () => {
+        const isOpen = acc.classList.contains('open');
+
+        if (!isOpen) {
+          acc.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded','true');
+          panel.setAttribute('aria-hidden','false');
+        } else {
+          acc.classList.remove('open');
+          panel.style.maxHeight = null;
+          btn.setAttribute('aria-expanded','false');
+          panel.setAttribute('aria-hidden','true');
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (acc.classList.contains('open')) {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

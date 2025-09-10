@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JANNAT | About Me</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { padding-left: 2rem; padding-right: 2rem; }
+
+    /* About Me Hero / Profile Statement */
+    .about-hero{
+      background: #F9FBE7; /* same light greenish-yellow as Portfolio homepage */
+      padding: 2rem;
+      border-bottom: 3px solid #00BFA6;
+      max-width: 1000px;
+      margin: 2rem auto;
+      border-radius: 6px;
+    }
+    .about-hero h1{
+      font-family: "Poppins", sans-serif;
+      font-size: 2.8rem;
+      color: #00BFA6;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .profile-text{
+      font-family: "DM Sans", sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #333333;
+      text-align: center;
+    }
+
+    /* Back Button */
+    .back-btn{
+      display: inline-block;
+      margin: 1rem 0 2rem 0;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #00BFA6;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .back-btn:hover{
+      background-color: #FF6B6B;
+      transform: translateY(-2px);
+    }
+
+    /* Collapsible Sections */
+    .collapsible {
+      background-color: #00BFA6;
+      color: white;
+      cursor: pointer;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.25rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      transition: background 0.2s ease;
+    }
+    .collapsible:hover { background-color: #FF6B6B; }
+    .content-collapsible {
+      padding: 1rem;
+      display: none;
+      overflow: hidden;
+      background-color: #F8F9FA;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Bold positions / company names */
+    .position-bold{
+      font-weight:700;
+      color:#FF6B6B;
+      margin-top:0.5rem;
+      margin-bottom:0.25rem;
+    }
+
+    /* Bold dates */
+    .date-bold{
+      font-weight:700;
+      color:#00BFA6;
+      margin-bottom:0.75rem;
+    }
+
+    /* Section headers */
+    h3.section-title{
+      font-family:"Poppins",sans-serif;
+      font-size:1.5rem;
+      color:#00BFA6;
+      margin-bottom:0.5rem;
+    }
+
+    /* Bullets and spacing */
+    ul{
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    li{ margin-bottom:0.5rem; }
+
+    /* Projects & Hobbies distinction */
+    .projects{
+      background-color: #F9FBE7;
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .hobbies{
+      background-color: #FFFAF0;
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 600px){
+      .about-hero h1{ font-size:2.2rem; }
+      .collapsible{ font-size:1.1rem; }
+      .section-title{ font-size:1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+  <a href="index.html" class="back-btn">&larr; Back to Homepage</a>
+
+  <!-- Profile Statement Hero -->
+  <section class="about-hero">
+    <h1>PROFILE STATEMENT</h1>
+    <p class="profile-text">
+      Creative, quick-learning content writer with approximately 3 years of experience in the marketing industry, ideating and developing traffic-driving copies for its social media, website and personal brands. Combines business knowledge with artfulness through degrees in Mass Communication, Commerce and Event Management.
+    </p>
+  </section>
+
+  <!-- Collapsible: Experience -->
+  <button class="collapsible">EXPERIENCE</button>
+  <div class="content-collapsible">
+    <p class="position-bold">Content Writer – Vetrinex Labs (USA-based company making pet supplements)</p>
+    <p class="date-bold">01-12-2023 to Present</p>
+    <ul>
+      <li>Worked on direct communications with customers, understanding ground level needs and content requirements</li>
+      <li>Wrote and edited long-form, MOFU blogs and short-form, sales focused BOFU blogs</li>
+      <li>Developed video scripts for advertisements and PR</li>
+      <li>Created copies for advertisements as well as social media posts</li>
+      <li>Assisted in developing landing page content and website content</li>
+      <li>Ideated, researched and strategised for marketing campaigns</li>
+    </ul>
+
+    <p class="position-bold">Jr. Content Writer – Ikarus 3D (Product visualisation and 3D modelling company catering to global business clients)</p>
+    <p class="date-bold">01-09-2022 to 08-11-2023</p>
+    <ul>
+      <li>Developed social media content and video scripts for the company’s LinkedIn, Instagram and Twitter pages</li>
+      <li>Created social media content for 6 personal brands including the CEO & Founder, and Co-founder</li>
+      <li>Developed website content from scratch collaborating with SEO analyst, consequently grabbed SEO skills</li>
+      <li>Wrote and published blogs and articles for the company’s website</li>
+      <li>Created copies for marketing communications like advertisements</li>
+      <li>Assisted the sales team to create emails and company deck</li>
+      <li>Developed an entire creative story for a D&D tabletop project</li>
+      <li>Ideated, researched and strategised for marketing campaigns</li>
+    </ul>
+  </div>
+
+  <!-- Collapsible: Internships -->
+  <button class="collapsible">INTERNSHIPS</button>
+  <div class="content-collapsible">
+    <p class="position-bold">Advertising Intern – Mantrin (Advertising agency)</p>
+    <p class="date-bold">04-04-2022 to 28-05-2022</p>
+    <ul>
+      <li>Generated copies for topical and general creatives</li>
+      <li>Collaborated with teams to brainstorm ideas for advertising campaigns</li>
+      <li>Wrote SEO appropriate listings and blogs</li>
+      <li>Assisted graphic designers and video editors in campaign generation</li>
+    </ul>
+
+    <p class="position-bold">Volunteer Digital Media Marketer - NGO Hamari Pehchan</p>
+    <p class="date-bold">13-08-2020 to 13-09-2020</p>
+    <ul>
+      <li>Assisted in social media marketing by designing posters and campaigns</li>
+      <li>Formulated relevant marketing model for widening NGO reach</li>
+      <li>Assisted in raising money for social service activities</li>
+    </ul>
+  </div>
+
+  <!-- Collapsible: Educational Qualification -->
+  <button class="collapsible">EDUCATIONAL QUALIFICATION</button>
+  <div class="content-collapsible">
+    <p class="position-bold">Master’s Degree in Journalism and Mass Communication</p>
+    <p class="date-bold">2020 – 2022 | School of Communication Studies, Panjab University, Chandigarh | Score: 77.71% (Gold Medallist - 1st position in batch)</p>
+
+    <p class="position-bold">Bachelor’s Degree in B.com with Honours in Economics</p>
+    <p class="date-bold">2017 – 2020 | GGDSD College, Chandigarh | Score: 80.24%</p>
+
+    <p class="position-bold">Diploma in Event Management</p>
+    <p class="date-bold">2017 – 2019 | GGDSD College, Chandigarh | Score: 79%</p>
+  </div>
+
+  <!-- Projects & Achievements -->
+  <section class="projects">
+    <h3 class="section-title">PROJECTS AND ACHIEVEMENTS</h3>
+    <ul>
+      <li>Completed Dissertation on the topic - Effectiveness of Surrogate Advertising among Television Viewers: A Chandigarh based Survey. (2021- 2022)</li>
+      <li>Worked for the Panjab University Perception Cell (P.R. Cell) to assist in formulating a media and communications plan for the promotion of the university. Ideated, conceptualised and directed promotional videos for the same. (2022)</li>
+      <li>Participated in the 8th Season of the Indian Art Contest, through a digital art entry. (2022)</li>
+      <li>Worked with a batch-mate to film a Documentary named Mehram – A poetic movie of the conversation between the Hills and the Plains. Consequently, wrote a poem for the same. (2021)</li>
+      <li>Participated in the Photography competition of Pratibha. (2021)</li>
+    </ul>
+  </section>
+
+  <!-- Hobbies -->
+  <section class="hobbies">
+    <h3 class="section-title">HOBBIES</h3>
+    <ul>
+      <li>Learning languages</li>
+      <li>Drawing, sketching, illustrating</li>
+      <li>Digital art</li>
+      <li>Guitar and music</li>
+      <li>Reading</li>
+    </ul>
+  </section>
+
+  <script>
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach(btn => {
+      btn.addEventListener("click", function() {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        if(content.style.display === "block"){
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

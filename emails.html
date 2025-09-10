@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Email Marketing | Jannat</title>
+
+  <!-- shared stylesheet & fonts -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    .container { max-width: 1100px; margin: 1.75rem auto; padding: 0 1.25rem; }
+    .back-btn { margin: 1.25rem; }
+    .back-btn a { text-decoration: none; color: inherit; font-weight:600; }
+    .hero.hero-alt { padding-bottom: 1.25rem; }
+
+    .accordion {
+      background: transparent;
+      margin-bottom: 1.25rem;
+      border-radius: 12px;
+      overflow: visible;
+    }
+
+    .accordion-header {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 0.9rem 1.1rem;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .accordion-header:hover { background: var(--secondary); }
+    .accordion-header .chev { transition: transform .22s ease; }
+    .accordion.open .accordion-header .chev { transform: rotate(180deg); }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 8px;
+      margin-top: 0.6rem;
+      padding: 1rem;
+      overflow: auto;
+      display: none;
+    }
+
+    .panel .desc {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text-dark);
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .panel img, .panel video {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      margin: 0.9rem auto;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.06);
+      object-fit: contain;
+    }
+
+    .purple-text { color: purple; font-weight: 600; cursor: pointer; }
+
+    @media (max-width: 900px){ .panel img, .panel video { max-width: 90%; } }
+    @media (max-width: 480px){ .panel img, .panel video { max-width: 100%; } }
+  </style>
+</head>
+
+<body>
+  <div class="back-btn">
+    <a href="aboutwork.html">← Back</a>
+  </div>
+
+  <section class="hero hero-alt">
+    <div class="hero-center">
+      <h1>EMAIL MARKETING</h1>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- Topical Email - Valentine’s Day -->
+    <h2 style="text-align:center; margin-top:1.25rem; color:var(--secondary);"></h2>
+    <section class="accordion">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Topical Email - Valentine’s Day ♥️</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">
+          <p><strong>Subject line 1</strong> - Be my fur-ever valentine? 👉👈</p>
+          <p><strong>Subject line 2</strong> - It’s Valentine’s Day and we miss you… 🥺</p>
+          <p><strong>Subject line 3</strong> - Happy Valentine’s Day, from…</p>
+          <p><strong>Subject line 4</strong> - Someone over here thinks you’re cute 😏</p>
+          <p><strong>Subject line 5</strong> - Just a heads up… *someone* is expecting a date.</p>
+          <br>
+          <br>
+          <p>Hi ABC,</p>
+          <br>
+          <p>Not to be <b>*THAT*</b> ex who you’ve lost touch with, and who suddenly reaches out on good ol’ Valentine’s day, but…</p>
+          <br>
+          <p>How YOU doin?</p>
+          <img src="images/dog1.gif" alt="dog1.gif">
+          <br>
+          <p>I know I know, it’s been a while since we reached out. But this day makes us want to shower our love to pawrents.</p>
+          <br>
+          <p>We promise we’re working on our communication… Consider this as our first step.</p>
+          <br>
+          <p>But for now, forget about us… Let’s talk about your furry Valentine who thinks you’re the best hooman EVER.</p>
+          <br>
+          <p>Why don’t you spend Valentine's Day 2025 with your furry best friend? After all, your pup loves you unconditionally… no fancy-schmancy stuff needed. 🐾</p>
+          <br>
+           <ul style="margin-left: 20px;">
+        <li>Go out on a long walk through their favorite trail or neighborhood. At the end, buy them some doggie-safe, heart-shaped treats, or a cute new toy that they’ll enjoy playing with.</li>
+        <li>Take your pooch on a drive and enjoy the sunset by the beach… they appreciate the view, and you appreciate yours💕</li>
+        <li>Your pooch loves snuggles and cuddles, so play a song or a movie that gets their tail wagging and spend the day in!</li>
+        <li>Whip up your doggo’s favorite meal, and enjoy a cute dinner date together! Let them indulge today with some more treats than usual, whatsay?</li>
+    </ul>
+          <br>
+          <p>But remember, let the treats be anything BUT chocolates. While chocolates might be the go-to gift for humans, they’re a big no-go for your furry friend.</p>
+          <br>
+          <p>Still, did your dog sniff out a box lying somewhere and had a bite?</p>
+          <br>
+          <p>Check here to find out when it’s A-OK and when you need to be concerned.</p>
+          <br>
+          <p>That’s all for today…we’ll leave you to enjoy the day of love. ♥️</p>
+          <br>
+          <p>Also… let us know what kind of content you’d like to see from us. We’ll work on it so we get only the best content for you!</p>
+          <br>
+          <p>Regards,<br>Vetrinex Labs</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apology Email -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);"></h2>
+    <section class="accordion">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Email to apologise for a production error on company’s part</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">
+          <p><strong>Subject</strong> - From Vetrinex Labs - A bottle of Advanced Joint Support! 🐶</p>
+          <br>
+          <p>Hello ABC,</p>
+          <br>
+          <p>I am XYZ, from Vetrinex Labs Customer Support.</p>
+          <br>
+          <p>I hope this message finds you and your furry friend well.</p>
+          <br>
+          <p>A while back, we sent out a bottle of Advanced Joint Support from a batch that did not meet our strict quality standards. The supplements in the bottle were oxidized due to some leakage or breach in packaging.</p>
+          <br>
+          <p>On behalf of the Vetrinex Labs team, I sincerely apologize for the inconvenience or disappointment this may have caused you and your furry friend.</p>
+          <br>
+          <p>We believe in transparency and accountability, and it's crucial for us to make it up to you, our valued customer.</p>
+          <br>
+          <p>As a token of apology, we are sending you a complimentary replacement bottle of Advanced Joint Support. This new bottle comes from our latest batch, ensuring that it meets our high standards of potency and efficacy.</p>
+          <br>
+          <p>You should receive your bottle within the next few days.</p>
+          <br>
+          <p>We understand how important your pooch’s health and happiness are, and we promise to provide supplements that deliver visible improvements and results.</p>
+          <br>
+          <p>Thank you for being a member of the Vetrinex Labs family. Please know that your satisfaction and your pooch’s well-being are our top priorities.</p>
+          <br>
+          <p>Regards,<br>XYZ<br>Vetrinex Labs</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informative Email -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);"></h2>
+    <section class="accordion">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Informative email to maintain recall and contact</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">
+        <br>
+          <p>Hello ABC!</p>
+          <br>
+          <p>I know you’ve felt it.</p>
+          <br>
+          <p>The urge to keep cozy in bed in winters wakes up the procrastination devil inside all of us.</p>
+          <br>
+          <p>But it’s not just us. Our dogs need a little extra push to stay active during the colder months!</p>
+          <br>
+          <p>Do you know why?</p>
+          <br>
+          <p>Dropping temperatures thicken up the fluids in joints and cause joint tissues to become larger bringing about stiffness and pain.</p>
+          <br>
+          <p>But, you can do these 5 things to help your pup not just have healthy joints but a happy, enjoyable winter:</p>
+          <br>
+          <ol style="margin-left: 20px; line-height: 1.8;">
+        <li><strong>Weight check:</strong> Holiday weight is not just a common hooman concern. Cold weather usually brings about a reduction in activity resulting in weight gain during the winter months. Keep track of your doggie’s weight, because obesity or so much as a little increase in weight adds pressure to their joints.</li>
+
+        <li><strong>Activities and fun:</strong> Staying indoors can be a whole lotta fun too! Play games like hide and seek, puzzles, tug, and you can even set up playdates with your pups best buddies.</li>
+
+        <li><strong>Keeping them warm and cozy:</strong> A warm puppy is a pain-free puppy. Joint stiffness during colder months can be relieved by keeping them warm through orthopedic pet beds and heat mats, just remember that the heat mat shouldn’t come in direct contact with your pup. Gears like coats, jumpers, and non-slip booties will help keep them warm when outdoors.</li>
+
+        <li><strong>Regular Check-ups:</strong> Joint problems like arthritis tend to worsen temporarily during the colder months. Regular vet visits to keep your pups health in check is a must, especially if you have an older dog.</li>
+
+        <li><strong>Joint Health Supplements and Therapies:</strong> Joint health supplements containing glucosamine is a great way to keep your pup pain-free and moving. If your pup has severe arthritis, you could also try red light therapy, the deep penetrating heat does wonders for stiff and sore joints.</li>
+    </ol>
+         <br>
+          <p>Is your dog ready for the winter? If not, I hope these tips help!</p>
+         <br>
+          <p>Happy winters 😉</p>
+          <br>
+          <p>Regards,<br>XYZ</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sales Series Emails -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);">Email series to generate sales of company’s offer</h2>
+    <!-- Sales Email 1 - Gold Plan -->
+    <section class="accordion">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Email 1</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">
+          <p><strong>Subject</strong> - PQR deserves the Golden treatment</p>
+          <p><strong>Preview</strong> - Treat your dog like gold (and save 30%!) 🐶✨</p>
+          <br>
+          <p>Hello ABC,</p>
+          <br>
+          <p>We know you want to give your doggo the very best.</p>
+          <br>
+          <p>Since they are family, we love to treat them well…</p>
+          <br>
+          <p>But what if we told you that giving your dog the golden treatment could also save you a golden opportunity?</p>
+          <br>
+          <p>That’s right. We are offering you the Gold Plan for Advanced Joint Support.</p>
+          <br>
+          <p>Here’s why it’s a win-win:</p>
+          <br>
+          <ul>
+            <li>✅ Save 30% INSTANTLY on a year’s supply</li>
+            <li>✅ Get a FREE Probiotics Plus bottle (worth $30!) for your dog’s gut health</li>
+            <li>✅ Enjoy free shipping on every delivery</li>
+          </ul>
+          <br>
+          <p class="purple-text">Claim Your Gold Plan Now</p>
+          <br>
+          <p>Ready to treat your dog (and your wallet) like gold?</p>
+          <br>
+          <p>Regards,<br>Vetrinex Labs</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sales Email 2 - Silver vs Gold -->
+    <section class="accordion">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Email 2</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">
+          <p><strong>Subject</strong> - Why settle for silver 🩶</p>
+          <p><strong>Preview</strong> - when you can go for GOLD? 💛</p>
+          <br>
+          <p>Hi ABC,</p>
+          <br>
+          <p>Did you get a chance to think about our GOLD plan?</p>
+          <br>
+          <p>If not, let me quickly run it by you again… after all, I want you to save bucks and treat your doggo at the same time. ☺️</p>
+          <br>
+          <p>With the Gold Plan, you’re not just getting a year’s supply of Advanced Joint Support. You’re also -</p>
+          <br>
+          <ul style="margin-left: 20px;"><b>
+            <li>Saving 30% instantly - that’s cash back in your pocket.</li>
+            <li>Scoring a FREE Probiotics Plus bottle (because gut health matters too)</li>
+            <li>Enjoying free shipping and saving even MORE money!</li>
+          </b></ul>
+          <br>
+          <p>It’s too good right? But wait, here’s the best part.</p>
+          <br>
+          <p>You can cancel anytime if it’s not the perfect fit.</p>
+          <br>
+          <p>Don’t let this golden opportunity slip away. Treat your dog like the VIP they are!</p>
+          <br>
+          <p class="purple-text">Go Gold for my Dog</p>
+          <br>
+          <p>Regards,<br>Vetrinex Labs</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sales Email 3 - Superb Health & Savings -->
+    <section class="accordion">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Email 3</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">
+          <p><strong>Subject</strong> - Time for Superb health, Superb savings!!</p>
+          <p><strong>Preview</strong> - Get Gold 💰 before it’s gone</p>
+          <br>
+          <p>Hello ABC,</p>
+          <br>
+          <p>Imagine this -</p>
+          <br>
+          <p>Your dog, running around like a puppy again, joints strong and tail wagging.</p>
+          <br>
+          <p>And you?</p>
+          <br>
+          <p>Sitting back, knowing you saved 30% on their joint care. 🦴</p>
+          <br>
+          <p>That’s the magic of this new offer we have for you!</p>
+          <br>
+          <p>You get -</p>
+          <br>
+          <ul style="margin-left: 20px;"><b>
+            <li>A year’s supply of Advanced Joint Support at a 30% discount</li>
+            <li>A FREE Probiotics Plus bottle to keep their tummy happy too</li>
+            <li>Free shipping on every delivery without the hassle of placing orders every time</li>
+          </b></ul>
+          <br>
+          <p>Your doggo gets -</p>
+          <br>
+          <ul style="margin-left: 20px;"><b>
+            <li>The healthiest joints ever</li>
+            <li>Improvement in overall mobility</li>
+            <li>Happy playtimes and zoomies!</li>
+          </b></ul>
+          <br>
+          <p>Oh, and did I mention the money-back guarantee? If you don’t see results, we’ve got your back.</p>
+          <br>
+          <p>This deal is too good to pass up. Go gold today before the offer’s GONE.</p>
+          <br>
+          <p class="purple-text">Claim Your Gold Annual Plan</p>
+          <br>
+          <p>Regards,<br>Vetrinex Labs</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sales Email 4 - Last Chance -->
+    <section class="accordion">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Email 4</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">
+          <p><strong>Subject</strong> - ⏰Last chance to go GOLD</p>
+          <p><strong>Preview</strong> - For you and your doggo</p>
+          <br>
+          <p>Hi ABC,</p>
+          <br>
+          <p>This is your final reminder to grab the Gold Plan and treat your pup and your pocket like gold.</p>
+          <br>
+          <p>Here’s what you’ll miss out on if you don’t act now -</p>
+          <br>         
+          <ul>
+            <li>🔥 30% SAVINGS on a year’s supply of Advanced Joint Support 😱</li>
+            <li>🔥 A FREE Probiotics Plus bottle (worth $30!) for your pooch’s gut health</li>
+            <li>🔥 Free shipping on every delivery! (We don’t give this away every time)</li>
+          </ul>
+          <br>
+          <p>Trust me. This golden opportunity won’t last forever.</p>
+          <br>
+          <p>Don’t let it slip away!</p>
+          <br>
+          <p class="purple-text">Claim my savings + dog’s health now</p>
+          <br>
+          <p>Regards,<br>Vetrinex Labs</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Single Information Email -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);"></h2>
+    <section class="accordion">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Email that delivers one piece of information in an interesting manner</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">
+          <p><strong>Subject</strong> - Here’s some crack… 🤫</p>
+          <p><strong>Preview text</strong> - Should you get your dog to a chiropractor?</p>
+          <br>
+          <p>Hello ABC!</p>
+          <br>
+          <p>With all the instagram reels going around where vet chiropractors crack and crinkle the spine, you must’ve thought whether to take your canine to one.</p>
+          <br>
+          <p>So… Here’s the big question. Should I get a chiropractic adjustment for my dog?</p>
+          <br>
+          <p>Plain and simple:</p>
+          <br>
+          <p>Chiropractic or spinal adjustment is safe for adult dogs.</p>
+          <br>
+          <p>It isn’t a traditional treatment method, neither is it a standalone treatment for spinal health.</p>
+          <br>
+          <p>However, as a supplement to mainstream doggie care, it can help your dog with conditions like osteoarthritis, back or neck pain, nervous system problems or hip dysplasia. It can also be an excellent preventative measure.</p>
+          <br>
+          <p>However, keep it away from the little ones!</p>
+          <br>
+          <p>It is advised that puppies aren’t taken to chiropractors, because their bodies haven’t fully formed yet. So they are still too delicate for such manipulations that can increase the risk of injury.</p>
+          <br>
+          <p>Take an informed decision only after talking to your vet.</p>
+          <br>
+          <p>Have a good day!</p>
+          <br>
+          <p>Regards,<br>XYZ</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scarcity / FOMO Email -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);"></h2>
+    <section class="accordion">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Email generating scarcity and fear of missing out to urge action</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">
+          <p><strong>Subject</strong> - We’re running out of stock 😨</p>
+          <p><strong>Preview text</strong> - Your favorite Joint Support supplement is LOW in stock</p>
+          <br>
+          <p>Hello ABC,</p>
+          <br>
+          <p><b>ALERT: </b>As a result of the ongoing offer on our Advanced Joint Support, our bottles are selling out SUPER FAST. ⚡</p>
+          <br>
+          <p>(You know how quickly we sell out when we’ve got good offers 😉)</p>
+         <br>
+          <p>In case you missed out, we’re offering:</p>
+          <br>
+          <ul>
+            <li><strong>10% discount on the purchase of one bottle</strong></li>
+            <li><strong>15% discount on the purchase of two bottles</strong></li>
+            <li><strong>20% discount on the purchase of three bottles</strong></li>
+          </ul>
+          <br>
+          <p>And code: JOINT10 to be applied at the checkout for an additional 10% OFF.</p>
+          <br>
+          <p>SO DON’T WAIT UP!</p>
+          <br>
+          <p>Head over to Checkout and buy the Advanced Joint Support at the best price before it goes OUT OF STOCK.</p>
+          <br>
+          <p>Regards,<br>XYZ</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Accordion Script -->
+  <script>
+    document.querySelectorAll('.accordion').forEach(acc => {
+      const btn = acc.querySelector('.accordion-header');
+      const panel = acc.querySelector('.panel');
+      panel.style.display = 'none';
+      btn.addEventListener('click', () => {
+        const isOpen = acc.classList.contains('open');
+        if (!isOpen) {
+          acc.classList.add('open');
+          panel.style.display = 'block';
+          btn.setAttribute('aria-expanded','true');
+          panel.setAttribute('aria-hidden','false');
+        } else {
+          acc.classList.remove('open');
+          panel.style.display = 'none';
+          btn.setAttribute('aria-expanded','false');
+          panel.setAttribute('aria-hidden','true');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

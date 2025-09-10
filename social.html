@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Social Media Content | Jannat</title>
+
+  <!-- use the same shared stylesheet & fonts used across your site -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- page-specific CSS (keeps the exact visual language you approved) -->
+  <style>
+    /* container to keep page width consistent with other pages */
+    .container { max-width: 1100px; margin: 1.75rem auto; padding: 0 1.25rem; }
+
+    /* back button block matches aboutwork.html structure */
+    .back-btn { margin: 1.25rem; }
+    .back-btn a { text-decoration: none; color: inherit; font-weight:600; }
+
+    /* hero-alt is present in your style.css — this keeps consistency */
+    .hero.hero-alt { padding-bottom: 1.25rem; }
+
+    /* Accordion (keeps visual continuity with blog accordions) */
+    .accordion {
+      background: transparent;
+      margin-bottom: 1.25rem;
+      border-radius: 12px;
+      overflow: visible;
+    }
+
+    .accordion-header {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 0.9rem 1.1rem;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .accordion-header:hover { background: var(--secondary); }
+
+    .accordion-header .chev { transition: transform .22s ease; }
+    .accordion.open .accordion-header .chev { transform: rotate(180deg); }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 8px;
+      margin-top: 0.6rem;
+      padding: 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .36s cubic-bezier(.2,.9,.2,1), padding .2s ease;
+    }
+
+    .accordion.open .panel { padding: 1rem; }
+
+    /* Blog/post text inside panel */
+    .panel .desc {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text-dark);
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+      line-height: 1.6;
+    }
+
+    /* images stacked vertically, BUT constrained so they are smaller and centered */
+    .panel img {
+      display: block;
+      width: 100%;
+      max-width: 720px;     /* <-- reduced maximum width so images don't dominate scrolling */
+      height: auto;
+      margin: 0.9rem auto;  /* centers the image */
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.06);
+      object-fit: contain;
+    }
+
+    /* small responsive tweaks */
+    @media (max-width: 900px){
+      .panel img { max-width: 90%; }
+    }
+    @media (max-width: 480px){
+      .panel img { max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BACK BUTTON -->
+  <div class="back-btn">
+    <a href="aboutwork.html">← Back</a>
+  </div>
+
+  <!-- HERO (uses the same hero classes for visual continuity) -->
+  <section class="hero hero-alt">
+    <div class="hero-center">
+      <h1>SOCIAL MEDIA CONTENT</h1>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- LinkedIn Section -->
+    <h2 style="text-align:center; margin-top:1.25rem; color:var(--secondary);">LinkedIn</h2>
+
+    <!-- Post 1 -->
+    <section class="accordion" id="lnk-post-1">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Post number 1</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">B2B sales-oriented LinkedIn post for Ikarus 3D, focusing solely on products offered and ending it with an interesting CTA</div>
+        <!-- stacked, full-width images (now capped by max-width) -->
+        <img src="images/lpost1.png" alt="lpost1.png">
+        <img src="images/lpost2.png" alt="lpost2.png">
+      </div>
+    </section>
+
+    <!-- Post 2 -->
+    <section class="accordion" id="lnk-post-2">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Post number 2</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">Post highlighting one of the company’s in-house activities, that creates trust on the brand with internal and external stakeholders</div>
+        <img src="images/lpost3.png" alt="lpost3.png">
+        <img src="images/lpost4.png" alt="lpost4.png">
+      </div>
+    </section>
+
+    <!-- Post 3 (carousel images stacked) -->
+    <section class="accordion" id="lnk-post-3">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Post number 3</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">Informational carousel post that aims to build the company’s image as an industry expert</div>
+        <img src="images/lpost5.png" alt="lpost5.png">
+        <img src="images/lpost6.png" alt="lpost6.png">
+        <img src="images/lpost7.png" alt="lpost7.png">
+        <img src="images/lpost8.png" alt="lpost8.png">
+        <img src="images/lpost9.png" alt="lpost9.png">
+        <img src="images/lpost10.png" alt="lpost10.png">
+        <img src="images/lpost11.png" alt="lpost11.png">
+      </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);">Instagram</h2>
+
+    <section class="accordion" id="ig-post-1">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Post number 1</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">B2C informational post as an industry leader to create awareness and build trust with customers and prospects</div>
+        <img src="images/ipost1.png" alt="ipost1.png">
+        <img src="images/ipost2.png" alt="ipost2.png">
+        <img src="images/ipost3.png" alt="ipost3.png">
+        <img src="images/ipost4.png" alt="ipost4.png">
+        <img src="images/ipost5.png" alt="ipost5.png">
+        <img src="images/ipost6.png" alt="ipost6.png">
+      </div>
+    </section>
+
+    <section class="accordion" id="ig-post-2">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Post number 2</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">Fun static post that drives engagement and is exciting to read</div>
+        <img src="images/ipost7.png" alt="ipost7.png">
+      </div>
+    </section>
+
+    <section class="accordion" id="ig-post-3">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Post number 3</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">Post that reveals company culture, drives engagement and builds trust</div>
+        <img src="images/ipost8.png" alt="ipost8.png">
+      </div>
+    </section>
+
+    <section class="accordion" id="ig-post-4">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Post number 4</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <div class="desc">Negative hook post that generates curiosity while detailing benefits</div>
+        <img src="images/ipost9.png" alt="ipost9.png">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- same accordion script (unchanged) -->
+  <script>
+    document.querySelectorAll('.accordion').forEach(acc => {
+      const btn = acc.querySelector('.accordion-header');
+      const panel = acc.querySelector('.panel');
+
+      // ensure collapsed on load
+      panel.style.maxHeight = null;
+
+      btn.addEventListener('click', () => {
+        const isOpen = acc.classList.contains('open');
+
+        if (!isOpen) {
+          // open
+          acc.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded','true');
+          panel.setAttribute('aria-hidden','false');
+        } else {
+          // close
+          acc.classList.remove('open');
+          panel.style.maxHeight = null;
+          btn.setAttribute('aria-expanded','false');
+          panel.setAttribute('aria-hidden','true');
+        }
+      });
+
+      // if an accordion is open and the window resizes, recalc height
+      window.addEventListener('resize', () => {
+        if (acc.classList.contains('open')) {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

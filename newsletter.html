@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Newsletter | Jannat</title>
+
+  <!-- shared stylesheet & fonts -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    .container { max-width: 1100px; margin: 1.75rem auto; padding: 0 1.25rem; }
+
+    .back-btn { margin: 1.25rem; }
+    .back-btn a { text-decoration: none; color: inherit; font-weight:600; }
+
+    .hero.hero-alt { padding-bottom: 1.25rem; }
+
+    .accordion {
+      background: transparent;
+      margin-bottom: 1.25rem;
+      border-radius: 12px;
+      overflow: visible;
+    }
+
+    .accordion-header {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 0.9rem 1.1rem;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .accordion-header:hover { background: var(--secondary); }
+
+    .accordion-header .chev { transition: transform .22s ease; }
+    .accordion.open .accordion-header .chev { transform: rotate(180deg); }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 8px;
+      margin-top: 0.6rem;
+      padding: 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .36s cubic-bezier(.2,.9,.2,1), padding .2s ease;
+    }
+
+    .accordion.open .panel { padding: 1rem; }
+
+    .panel img {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      margin: 0.9rem auto;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.06);
+      object-fit: contain;
+    }
+
+    @media (max-width: 900px){
+      .panel img { max-width: 90%; }
+    }
+    @media (max-width: 480px){
+      .panel img { max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BACK BUTTON -->
+  <div class="back-btn">
+    <a href="aboutwork.html">← Back</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero hero-alt">
+    <div class="hero-center">
+      <h1>NEWSLETTER</h1>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- Newsletter 1 -->
+    <h2 style="text-align:center; margin-top:1.25rem; color:var(--secondary);">Newsletter 1 - November 2023</h2>
+    <section class="accordion" id="nl-1">
+      <button class="accordion-header" aria-expanded="false">
+        <span>View Newsletter</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <img src="images/iris1.png" alt="iris1">
+        <img src="images/iris2.png" alt="iris2">
+        <img src="images/iris3.png" alt="iris3">
+        <img src="images/iris4.png" alt="iris4">
+        <img src="images/iris5.png" alt="iris5">
+        <img src="images/iris6.png" alt="iris6">
+        <img src="images/iris7.png" alt="iris7">
+        <img src="images/iris8.png" alt="iris8">
+        <img src="images/iris9.png" alt="iris9">
+        <img src="images/iris10.png" alt="iris10">
+      </div>
+    </section>
+
+    <!-- Newsletter 2 -->
+    <h2 style="text-align:center; margin-top:1.25rem; color:var(--secondary);">Newsletter 2 - August 2023</h2>
+    <section class="accordion" id="nl-2">
+      <button class="accordion-header" aria-expanded="false">
+        <span>View Newsletter</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <img src="images/iris11.png" alt="iris11">
+        <img src="images/iris12.png" alt="iris12">
+        <img src="images/iris13.png" alt="iris13">
+        <img src="images/iris14.png" alt="iris14">
+        <img src="images/iris15.png" alt="iris15">
+        <img src="images/iris16.png" alt="iris16">
+      </div>
+    </section>
+
+    <!-- Newsletter 3 -->
+    <h2 style="text-align:center; margin-top:1.25rem; color:var(--secondary);">Newsletter 3 - June 2023</h2>
+    <section class="accordion" id="nl-3">
+      <button class="accordion-header" aria-expanded="false">
+        <span>View Newsletter</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <img src="images/iris17.png" alt="iris17">
+        <img src="images/iris18.png" alt="iris18">
+        <img src="images/iris19.png" alt="iris19">
+        <img src="images/iris20.png" alt="iris20">
+        <img src="images/iris21.png" alt="iris21">
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    document.querySelectorAll('.accordion').forEach(acc => {
+      const btn = acc.querySelector('.accordion-header');
+      const panel = acc.querySelector('.panel');
+
+      panel.style.maxHeight = null;
+
+      btn.addEventListener('click', () => {
+        const isOpen = acc.classList.contains('open');
+        if (!isOpen) {
+          acc.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded','true');
+          panel.setAttribute('aria-hidden','false');
+        } else {
+          acc.classList.remove('open');
+          panel.style.maxHeight = null;
+          btn.setAttribute('aria-expanded','false');
+          panel.setAttribute('aria-hidden','true');
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (acc.classList.contains('open')) {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

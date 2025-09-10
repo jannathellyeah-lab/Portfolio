@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Website Samples | Jannat</title>
+
+  <!-- shared stylesheet & fonts -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- page-specific CSS (matches the visual language of your other pages) -->
+  <style>
+    /* container to keep page width consistent with other pages */
+    .container { max-width: 1100px; margin: 1.75rem auto; padding: 0 1.25rem; }
+
+    /* back button block matches aboutwork.html structure */
+    .back-btn { margin: 1.25rem; }
+    .back-btn a { text-decoration: none; color: inherit; font-weight:600; }
+
+    /* hero-alt is present in your style.css — this keeps consistency */
+    .hero.hero-alt { padding-bottom: 1.25rem; }
+
+    /* Accordion (keeps visual continuity with blog accordions) */
+    .accordion {
+      background: transparent;
+      margin-bottom: 1.25rem;
+      border-radius: 12px;
+      overflow: visible;
+    }
+
+    .accordion-header {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 0.9rem 1.1rem;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .accordion-header:hover { background: var(--secondary); }
+
+    .accordion-header .chev { transition: transform .22s ease; }
+    .accordion.open .accordion-header .chev { transform: rotate(180deg); }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 8px;
+      margin-top: 0.6rem;
+      padding: 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .36s cubic-bezier(.2,.9,.2,1), padding .2s ease;
+    }
+
+    .accordion.open .panel { padding: 1rem; }
+
+    /* panel description (if needed) */
+    .panel .desc {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text-dark);
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+      line-height: 1.6;
+    }
+
+    /* images stacked vertically, constrained and centered */
+    .panel img {
+      display: block;
+      width: 100%;
+      max-width: 720px;     /* matches the other pages */
+      height: auto;
+      margin: 0.9rem auto;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.06);
+      object-fit: contain;
+    }
+
+    /* small responsive tweaks */
+    @media (max-width: 900px){
+      .panel img { max-width: 90%; }
+    }
+    @media (max-width: 480px){
+      .panel img { max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BACK BUTTON -->
+  <div class="back-btn">
+    <a href="aboutwork.html">← Back</a>
+  </div>
+
+  <!-- HERO (uses the same hero classes for visual continuity) -->
+  <section class="hero hero-alt">
+    <div class="hero-center">
+      <h1>WEBSITE SAMPLES</h1>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- Ikarus 3D Section -->
+    <h2 style="text-align:center; margin-top:1.25rem; color:var(--secondary);">Ikarus 3D</h2>
+
+    <section class="accordion" id="ik-about">
+      <button class="accordion-header" aria-expanded="false">
+        <span>About Page</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <img src="images/ikabout.png" alt="Ikarus 3D - About Page">
+      </div>
+    </section>
+
+    <section class="accordion" id="ik-careers">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Hero Section of Careers Page</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <img src="images/ikcareers.png" alt="Ikarus 3D - Careers Hero">
+      </div>
+    </section>
+
+    <!-- Vetrinex Labs Section -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);">Vetrinex Labs</h2>
+
+    <section class="accordion" id="vl-home">
+      <button class="accordion-header" aria-expanded="false">
+        <span>Homepage</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="panel" aria-hidden="true">
+        <img src="images/vlhomepage.png" alt="Vetrinex Labs - Homepage">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- same accordion script as used on other pages -->
+  <script>
+    document.querySelectorAll('.accordion').forEach(acc => {
+      const btn = acc.querySelector('.accordion-header');
+      const panel = acc.querySelector('.panel');
+
+      // ensure collapsed on load
+      panel.style.maxHeight = null;
+
+      btn.addEventListener('click', () => {
+        const isOpen = acc.classList.contains('open');
+
+        if (!isOpen) {
+          // open
+          acc.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded','true');
+          panel.setAttribute('aria-hidden','false');
+        } else {
+          // close
+          acc.classList.remove('open');
+          panel.style.maxHeight = null;
+          btn.setAttribute('aria-expanded','false');
+          panel.setAttribute('aria-hidden','true');
+        }
+      });
+
+      // if an accordion is open and the window resizes, recalc height
+      window.addEventListener('resize', () => {
+        if (acc.classList.contains('open')) {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

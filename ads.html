@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Advertisements | Jannat</title>
+
+  <!-- shared stylesheet & fonts -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    .container { max-width: 1100px; margin: 1.75rem auto; padding: 0 1.25rem; }
+    .back-btn { margin: 1.25rem; }
+    .back-btn a { text-decoration: none; color: inherit; font-weight:600; }
+    .hero.hero-alt { padding-bottom: 1.25rem; }
+
+    .accordion {
+      background: transparent;
+      margin-bottom: 1.25rem;
+      border-radius: 12px;
+      overflow: visible;
+    }
+
+    .accordion-header {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 0.9rem 1.1rem;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .accordion-header:hover { background: var(--secondary); }
+    .accordion-header .chev { transition: transform .22s ease; }
+    .accordion.open .accordion-header .chev { transform: rotate(180deg); }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 8px;
+      margin-top: 0.6rem;
+      padding: 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .36s cubic-bezier(.2,.9,.2,1), padding .2s ease;
+    }
+    .accordion.open .panel { padding: 1rem; }
+
+    .panel .desc {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text-dark);
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .panel img {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      margin: 0.9rem auto;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.06);
+      object-fit: contain;
+    }
+
+    /* two images side by side */
+    .side-by-side {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0.9rem 0;
+    }
+    .side-by-side img {
+      max-width: 48%;
+      margin: 0;
+    }
+
+    @media (max-width: 900px){
+      .panel img { max-width: 90%; }
+      .side-by-side img { max-width: 100%; }
+    }
+    @media (max-width: 480px){
+      .panel img { max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BACK BUTTON -->
+  <div class="back-btn">
+    <a href="aboutwork.html">← Back</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero hero-alt">
+    <div class="hero-center">
+      <h1>STATIC ADVERTISEMENT COPIES</h1>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- Vetrinex Labs -->
+    <h2 style="text-align:center; margin-top:1.25rem; color:var(--secondary);">
+      Vetrinex Labs - Promoting Dog Joint Supplements
+    </h2>
+
+    <section class="accordion">
+      <button class="accordion-header"><span>Post number 1</span><span class="chev">▾</span></button>
+      <div class="panel">
+        <div class="desc">Includes multiple variations</div>
+        <div class="side-by-side">
+          <img src="images/vl19.png" alt="vl19">
+          <img src="images/vl20.png" alt="vl20">
+        </div>
+        <div class="side-by-side">
+          <img src="images/vl21.png" alt="vl21">
+          <img src="images/vl22.png" alt="vl22">
+        </div>
+      </div>
+    </section>
+
+    <section class="accordion">
+      <button class="accordion-header"><span>Post number 2</span><span class="chev">▾</span></button>
+      <div class="panel">
+        <div class="desc">Includes multiple variations</div>
+        <div class="side-by-side">
+          <img src="images/vl9.jpg" alt="vl9">
+          <img src="images/vl10.jpg" alt="vl10">
+        </div>
+        <img src="images/vl11.jpg" alt="vl11">
+      </div>
+    </section>
+
+    <section class="accordion">
+      <button class="accordion-header"><span>Post number 3</span><span class="chev">▾</span></button>
+      <div class="panel">
+        <div class="desc">Includes multiple variations</div>
+        <div class="side-by-side">
+          <img src="images/vl16.png" alt="vl16">
+          <img src="images/vl17.png" alt="vl17">
+        </div>
+        <img src="images/vl18.png" alt="vl18">
+      </div>
+    </section>
+
+    <section class="accordion">
+      <button class="accordion-header"><span>Post number 4</span><span class="chev">▾</span></button>
+      <div class="panel">
+        <div class="desc">Includes multiple variations</div>
+        <div class="side-by-side">
+          <img src="images/vl5.jpg" alt="vl5">
+          <img src="images/vl6.jpg" alt="vl6">
+        </div>
+        <div class="side-by-side">
+          <img src="images/vl7.jpg" alt="vl7">
+          <img src="images/vl8.jpg" alt="vl8">
+        </div>
+      </div>
+    </section>
+
+    <section class="accordion">
+      <button class="accordion-header"><span>Miscellaneous Posts</span><span class="chev">▾</span></button>
+      <div class="panel">
+        <div class="side-by-side">
+          <img src="images/vl1.jpg" alt="vl1">
+          <img src="images/vl3.jpg" alt="vl3">
+        </div>
+        <div class="side-by-side">
+          <img src="images/vl12.jpg" alt="vl12">
+          <img src="images/vl13.jpg" alt="vl13">
+        </div>
+        <div class="side-by-side">
+          <img src="images/vl14.jpg" alt="vl14">
+          <img src="images/vl15.jpg" alt="vl15">
+        </div>
+      </div>
+    </section>
+
+    <!-- Ikarus 3D -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);">
+      Ikarus 3D - Promoting 3D Models
+    </h2>
+
+    <section class="accordion">
+      <button class="accordion-header"><span>Post number 1</span><span class="chev">▾</span></button>
+      <div class="panel">
+        <div class="desc">Includes multiple variations</div>
+        <img src="images/ik2.jpg" alt="ik2">
+        <img src="images/ik3.jpg" alt="ik3">
+        <img src="images/ik4.jpg" alt="ik4">
+        <img src="images/ik5.jpg" alt="ik5">
+      </div>
+    </section>
+
+    <section class="accordion">
+      <button class="accordion-header"><span>Post number 2</span><span class="chev">▾</span></button>
+      <div class="panel">
+        <img src="images/ik1.jpg" alt="ik1">
+      </div>
+    </section>
+
+    <section class="accordion">
+      <button class="accordion-header"><span>Post number 3</span><span class="chev">▾</span></button>
+      <div class="panel">
+        <img src="images/ik7.gif" alt="ik7">
+      </div>
+    </section>
+
+    <section class="accordion">
+      <button class="accordion-header"><span>Post number 4</span><span class="chev">▾</span></button>
+      <div class="panel">
+        <img src="images/ik6.jpg" alt="ik6">
+      </div>
+    </section>
+
+    <!-- GoodSound -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);">
+      GoodSound - Music Streaming Application (Mock Product)
+    </h2>
+
+    <section class="accordion">
+      <button class="accordion-header"><span>Post</span><span class="chev">▾</span></button>
+      <div class="panel">
+        <div class="desc">Work done entirely by me - from design to copy</div>
+        <img src="images/gs1.png" alt="gs1">
+      </div>
+    </section>
+
+    <!-- Chief -->
+    <h2 style="text-align:center; margin-top:1.75rem; color:var(--secondary);">
+      Chief - Detergent (Mock Product)
+    </h2>
+
+    <section class="accordion">
+      <button class="accordion-header"><span>Post</span><span class="chev">▾</span></button>
+      <div class="panel">
+        <div class="desc">Includes multiple variations</div>
+        <div class="side-by-side">
+          <img src="images/c1.png" alt="c1">
+          <img src="images/c2.png" alt="c2">
+        </div>
+        <div class="side-by-side">
+          <img src="images/c3.png" alt="c3">
+          <img src="images/c4.png" alt="c4">
+        </div>
+        <img src="images/c5.png" alt="c5">
+
+        <div class="desc">Size variations</div>
+        <img src="images/c6.png" alt="c6">
+        <img src="images/c7.png" alt="c7">
+
+        <div class="desc">Mockups</div>
+        <img src="images/c8.png" alt="c8">
+        <img src="images/c9.png" alt="c9">
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    document.querySelectorAll('.accordion').forEach(acc => {
+      const btn = acc.querySelector('.accordion-header');
+      const panel = acc.querySelector('.panel');
+
+      panel.style.maxHeight = null;
+
+      btn.addEventListener('click', () => {
+        const isOpen = acc.classList.contains('open');
+        if (!isOpen) {
+          acc.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded','true');
+          panel.setAttribute('aria-hidden','false');
+        } else {
+          acc.classList.remove('open');
+          panel.style.maxHeight = null;
+          btn.setAttribute('aria-expanded','false');
+          panel.setAttribute('aria-hidden','true');
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (acc.classList.contains('open')) {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

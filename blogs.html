@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blogs — JANNAT</title>
+
+  <!-- Fonts (same as your site) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Local site CSS variables kept consistent; fallbacks included -->
+  <style>
+    :root{
+      --primary: #00BFA6;      /* teal */
+      --secondary: #FF6B6B;    /* coral */
+      --bg-light: #F8F9FA;
+      --hero-bg: #F9FBE7;      /* light greenish-yellow */
+      --text-dark: #333333;
+      --white: #ffffff;
+      --max-width: 1100px;
+      --accent: #E7D94C;       /* lemon-ish accent (used sparingly) */
+    }
+
+    /* Page reset */
+    *{ box-sizing: border-box; margin:0; padding:0; }
+    html,body{ height:100%; }
+    body{
+      font-family: "DM Sans", Arial, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* HERO / top area to match the site */
+    .hero {
+      background: var(--hero-bg);
+      border-bottom: 3px solid var(--primary);
+      padding: 1.25rem 1rem;
+    }
+    .hero-inner{
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      justify-content:space-between;
+    }
+    .back-link {
+      text-decoration: none;
+      color: var(--text-dark);
+      background: transparent;
+      border: 1px solid rgba(0,0,0,0.06);
+      padding: 0.5rem 0.85rem;
+      border-radius: 8px;
+      font-weight:600;
+      transition: transform .15s ease;
+    }
+    .back-link:hover{ transform: translateY(-2px); }
+
+    .page-title{
+      text-align:center;
+      flex:1;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.6rem;
+      color: var(--primary);
+      letter-spacing: .6px;
+      font-weight:700;
+    }
+
+    /* container for the content */
+    .container{
+      max-width: var(--max-width);
+      margin: 2rem auto;
+      padding: 0 1rem 4rem;
+    }
+
+    /* Accordion / collapsible */
+    .accordion {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 6px 20px rgba(20,20,20,0.06);
+      margin-bottom: 1.35rem;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .accordion-header {
+      width: 100%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.0), rgba(255,255,255,0.02));
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      align-items:center;
+      justify-content:center; /* centers the title */
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    .accordion-title{
+      font-family: "Poppins", sans-serif;
+      font-size: 1.125rem;
+      color: var(--secondary);
+      text-align:center;
+      font-weight:700;
+      max-width: 95%;
+    }
+
+    .accordion-header:after{
+      content: "▾";
+      font-size: 1.05rem;
+      margin-left: 0.8rem;
+      color: rgba(0,0,0,0.35);
+      transition: transform 220ms ease;
+    }
+    .accordion.open .accordion-header:after{
+      transform: rotate(180deg);
+    }
+
+    .panel {
+      padding: 1.25rem 1.25rem;
+      border-top: 1px solid rgba(0,0,0,0.03);
+      background: linear-gradient(180deg, #fff 0%, #fbfbfb 100%);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 350ms ease;
+    }
+
+    /* blog content styling (uses same fonts/colors as site) */
+    .blog h2, .blog h3{ color: var(--primary); font-family: "Poppins", sans-serif; }
+    .blog h2{ font-size: 1.15rem; margin-bottom: .6rem; }
+    .blog h3{ font-size: 1rem; margin-bottom: .45rem; }
+
+    .blog p{ margin-bottom: 0.9rem; color: var(--text-dark); font-size: 1rem; }
+    .blog .lead{ font-family: "Poppins", sans-serif; font-weight:700; color: var(--primary); font-size:1.05rem; margin-bottom:0.8rem;}
+    .blog em{ color: var(--secondary); font-style: italic; }
+
+    .blog img{ display:block; max-width: 520px; width:100%; height:auto; margin: 0.9rem 0; border-radius:6px; }
+
+    /* captions */
+    .caption{ font-size: 0.85rem; color: rgba(0,0,0,0.6); font-style: italic; margin-top: -0.2rem; margin-bottom: 0.8rem; }
+
+    /* lists formatting */
+    .blog ul, .blog ol{ margin-left: 1.2rem; margin-bottom: 0.9rem; }
+    .blog li{ margin-bottom: .45rem; }
+
+    /* responsive */
+    @media (max-width:720px){
+      .page-title{ font-size:1.2rem; }
+      .accordion-header{ padding: 0.9rem; }
+      .panel{ padding: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO with Back button -->
+  <header class="hero">
+    <div class="hero-inner">
+      <a class="back-link" href="aboutwork.html">Back</a>
+      <div class="page-title">BLOGS</div>
+      <!-- empty spacer so the title stays centered -->
+      <div style="width:86px"></div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- BLOG 1 -->
+    <section class="accordion" id="b1">
+      <button class="accordion-header" aria-controls="panel1" aria-expanded="false" onclick="toggleAccordion(event,'panel1','b1')">
+        <div class="accordion-title">Disney vs. DreamWorks: The Tussle for the Tales</div>
+      </button>
+      <div id="panel1" class="panel">
+        <article class="blog">
+            <pre>
+            </pre>
+          <h2 style="text-align:center;">Disney vs. DreamWorks: The Tussle for the Tales</h2>
+          <p><em>(For CEO Ishan Kumar Giddu’s LinkedIn<br>Also appears as a Featured Snippet on Google Search)</em></p>
+
+          <p>Once upon a time…</p>
+
+          <p>Two of the biggest Animation Studios went head-to-head in a movie battle, unravelling a rivalry that exists to date.</p>
+
+          <p>I have always been fascinated by this - Who among the two lives happily ever after?</p>
+
+          <p>Disney, or DreamWorks?</p>
+
+          <p>Disney has currently caught flack for its live-actions. But what I want to dive into, is what defines the company - its animation studio, and how it stands alongside a highly worthy competitor.</p>
+
+          <p>The competitor that released Puss in Boots: The Last Wish on 20 January 2023 and collected a massive $555 million at the box office!</p>
+
+          <img src="images/tft1.png" alt="tft1.png" />
+          
+          <h3>Walt Disney Animation Studios</h3>
+
+          <p>It’s a universal fact that Disney Animation Studios owns the animation game.</p>
+
+          <p>The studio was founded on October 16, 1923 by Walt and Roy Disney, and is the oldest and most established animation studio in the world. As of 2022, Disney has released 61 feature films.</p>
+
+          <img src="images/tft2.png" alt="tft2.png" />
+
+          <p>The three highest grossing animated films of all time</p>
+
+          <p>The Lion King, 2019 ($1.6b)<br>
+          Frozen II, 2019 ($1.4b)<br>
+          Frozen, 2013 ($1.2b)</p>
+
+          <p>…are all Disney’s creations.</p>
+
+          <p>Disney Animation is known for its musicals, romances, fairy-tale adaptations and both hand-drawn and computer animations. Its characters have distinct facial features that when seen are easily recognizable.</p>
+
+          <p>The almost 100 year old company has stood the test of time - having faced even the World War, and financial difficulties as well as labor disputes during the 1940s and 50s.</p>
+
+          <p>It also faced a series of failed releases from the 1970s to early 1980s, after which, it underwent several management changes and corporate restructuring.</p>
+
+          <h3>DreamWorks Animations</h3>
+
+          <p>DreamWorks is a fairly new animation studio founded in 1994, but has generated a strong foothold in the industry, with many starting to prefer it over Disney.</p>
+
+          <p>DreamWorks has released 44 feature films. Considering that DreamWorks is the younger one of the two by approximately 71 years, it has a much higher rate of film production than Disney, arguably without any loss in animation quality.</p>
+
+          <img src="images/tft3.png" alt="tft3.png" />
+
+          <p>DreamWorks’ highest grossing film is Shrek 2 (2004) with $928M in its pocket. It became the highest grossing film of all time from 2004-2010, after which Toy Story 3 dethroned it - a film by, again, Disney.</p>
+
+          <p>DreamWorks has some of the funniest movies in the animation industry, with Shrek series becoming one of the biggest influences in pop-culture and media today. Its movies have become a classic among today’s generation, with a huge fan following.</p>
+
+          <p>DreamWorks faced financial and creative challenges in the 2010s, suffering from several box office flops, layoffs, restructuring, and distribution deals with other studios.</p>
+
+          <p><strong>Now comes the good part…</strong></p>
+
+          <p>… and Jeffrey Katzenberg is at its root.</p>
+
+          <p>Jeffrey Katzenberg became the chairman of Disney Studios in 1984 and practically rescued Disney from its decline, bringing about the Disney Renaissance from late 1980s to early 1990s. The studio started making hit after hit with The Little Mermaid, Beauty and the Beast, Aladdin, and The Lion King, and soon embraced computer animation.</p>
+
+          <p>In 1994, this genius left Disney due to some ugly internal conflicts, and a lawsuit that cost Disney $250 million.</p>
+
+          <p>In the same year, alongside director Steven Spielberg and music executive David Geffen, he co-founded… DreamWorks Animation, on October 12.</p>
+
+          <img src="images/tft4.png" alt="tft4.png" />
+
+          <p>Jeffrey now vowed to compete with Disney.</p>
+
+          <h3>Battle of the Movies</h3>
+
+          <p>The first movie that DreamWorks created under Jeffrey was Antz, released on October 2, 1998.  In the same year on November 14, Pixar released a movie for Walt Disney called A Bug’s Life.</p>
+
+          <p>Both movies had similar leads and similar plots.</p>
+
+          <img src="images/tft5.png" alt="tft5.png" />
+
+          <p>Where Antz movie’s worldwide box office collection was $152 million, A Bug’s Life stood at more than double that value, at $363 million.</p>
+
+          <p>But the animation and characters in both Antz and A Bug’s Life have found a way in pop-culture today in the form of memes and commentaries.</p>
+
+          <p>Just like these, DreamWorks and Disney (and Pixar) started releasing eerily similar or competing projects.</p>
+
+          <p>For example, Shrek (2001) and Monsters Inc. (2001), Shark Tale (2004) and Finding Nemo (2003), and Madagascar (2005) and The Wild (2006). DreamWorks also made a satirical comment on Disney’s fairy-tale musical tropes in Shrek.</p>
+
+          <p>This is the point to be noted - that simply box office collections these days aren’t the pinnacle of success.</p>
+
+          <p>It boils down to reception by the masses.</p>
+
+          <h3>Disney and DreamWorks of Today</h3>
+
+          <p>Disney was starting to face tons of criticism for its lack of diversity and imagination in its movies, something that DreamWorks never really suffered from.</p>
+
+          <p>While Disney movies can be considered ‘sweet’ and conform to the standards of a good, romantic story, like Tangled and The Little Mermaid, DreamWorks has never shied away from political and pop-culture jokes, and characters that are out-of-the-box.</p>
+
+          <p>Shrek and Kung-Fu Panda are big examples.</p>
+
+          <p>Disney Animation is backed by a big empire behind it as part of the Walt Disney Company - the Disney World, Marvel Studios, Pixar and 20th Century Studios.</p>
+
+          <p>DreamWorks, not so much.</p>
+
+          <p>Despite this, DreamWorks animation is rising extremely quickly. If Disney retains its focus on live-actions as it has been doing currently, who’s to say, DreamWorks might just overtake and win the animation game invented by Disney itself?</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOG 2 -->
+    <section class="accordion" id="b2">
+      <button class="accordion-header" aria-controls="panel2" aria-expanded="false" onclick="toggleAccordion(event,'panel2','b2')">
+        <div class="accordion-title">Best Joint Supplement for your Dog: Comprehensive Guide to give your Dog the Best Care</div>
+      </button>
+      <div id="panel2" class="panel">
+        <article class="blog">
+            <pre>
+            </pre>
+        
+          <h2 style="text-align:center;">Best Joint Supplement for your Dog: Comprehensive Guide to give your Dog the Best Care</h2>
+          <p><em>(For Vetrinex Labs’ Website)</em></p>
+
+          <p>Bringing up a dog is one of the happiest and most fulfilling journeys in life.</p>
+
+          <p>As you spend years with your furry friend, ensuring their good health becomes a primary concern. One aspect of dog health that often requires attention, especially as our furry friends age, is joint health.</p>
+
+          <p>This comprehensive guide will shed light on the importance and types of dog joint supplements and give you an insight into what’s best for your best friend.</p>
+
+          <img src="images/js1.png" alt="js1.png" />
+
+          <h3>Table of Contents</h3>
+          <ol>
+            <li>What are joint supplements for dogs?</li>
+            <li>What makes a good dog joint supplement?</li>
+            <li>What to look for in a dog joint supplement?</li>
+            <li>Top 5 vet-recommended joint supplements:</li>
+            <li>Why is Vetrinex Labs the Top Choice of Pet Parents?</li>
+            <li>But… does your dog actually need a joint supplement?</li>
+            <li>FAQs</li>
+          </ol>
+
+          <h3>What are joint supplements for dogs?</h3>
+          <p>Joint supplements for dogs are specially formulated products designed to support and promote their joint health. While maintaining a healthy weight and regular exercise are crucial, supplements play a vital role in enhancing joint comfort.</p>
+
+          <p>Joint supplements work by:</p>
+          <ul>
+            <li>Improving mobility and flexibility</li>
+            <li>Decreasing joint pain and inflammation</li>
+            <li>Slowing down cartilage loss and encouraging cartilage production</li>
+          </ul>
+
+          <p>Dogs with more severe hip dysplasia (higher grades) are more likely to experience discomfort, lameness especially in their hind legs, and joint problems as they age.</p>
+
+          <h3>What makes a good dog joint supplement?</h3>
+          <p>Not all joint supplements are created equal. Be sure to check the label of ingredients before choosing a joint supplement for your pup. A dose of the supplement should include these top 3 ingredients!</p>
+
+          <ol>
+            <li><strong>Glucosamine:</strong> This compound is found naturally in cartilage and targets joint pain and stiffness, offering comfort for dogs with osteoarthritis or other cartilage degeneration issues.</li>
+            <li><strong>Chondroitin:</strong> Works in conjunction with glucosamine to support joint health and reduce inflammation. It is essential for the growth of new cartilage. Chondroitin also acts as an absorbent, keeping cartilage hydrated and healthy.</li>
+            <li><strong>Methylsulfonylmethane (MSM):</strong> A naturally occurring sulfur compound and is given for inflammation and shows potential benefits in relieving symptoms of osteoarthritis.</li>
+          </ol>
+
+          <p>Ingredients on the ingredient list are usually displayed in order of potency, so ensure the supplement you choose has these 3 ingredients in their top 3!</p>
+
+          <p>A few other ingredients that work wonders for joint health and would be good to have in a daily joint supplement are:</p>
+          <ul>
+            <li>Grape Seed Extract</li>
+            <li>Vitamins C and E</li>
+            <li>Omega 3 fatty acids</li>
+            <li>Curcumin (Turmeric)</li>
+            <li>Green-lipped Mussels</li>
+          </ul>
+
+          <h3>What to look for in a dog joint supplement?</h3>
+          <p>The three main factors to consider when determining if a supplement is good for your pup are type of ingredients, quality of the ingredients and their potency. We already covered the ingredient side of things above, now for the rest!</p>
+
+          <ol>
+            <li><strong>Quality ingredients:</strong> Don’t give your pup anything you wouldn’t have. Choose a company that uses human-grade quality ingredients! A supplement made with high-quality ingredients not only has a low contamination risk making them safer for dogs with allergies but also is higher in bioavailability. Bioavailability refers to the extent and rate at which an ingredient is absorbed and utilized.</li>
+
+            <li><strong>Potency:</strong> It is not just about the type and quality of ingredients – many companies add only a little of the main active ingredient just so they can mention it on the label. Potency is one of the key factors when it comes to seeing actual results. Choose a company that has Glucosamine, Chondroitin and MSM as their main active ingredient and is in the top 3 positions on their ingredient list.</li>
+
+            <li><strong>Smell & taste:</strong> Deciding which supplement to get your pup is hard, but getting them a supplement they will love to take is even harder. But supplements are no more boring and come in lip-smacking flavors your pup is sure to love and make feeding time a breeze for you!</li>
+          </ol>
+
+          <p>Here are the Top 5 Vet Recommended Supplements that are pup-rooved!</p>
+
+          <h3>Top 5 vet-recommended joint supplements:</h3>
+          <p><em>*The following comparison is made considering the average weight of a dog to be 60lbs*</em></p>
+
+          <ol>
+            <li><strong>Cosequin</strong><br>
+            Nutramax Cosequin Maximum Strength Plus MSM is a chewable joint supplement, with each tablet containing 600 mg of Glucosamine HCL, 300 mg of Chondroitin Sulfate and 250 mg of MSM.<br>
+            The chicken-flavored joint supplement requires 2 tablets per day for 4-6 weeks for an average 60-pound dog. It offers 60-count, 132-count, 180-count and 250-count bottles as per your need. A word of caution though – many dogs are allergic to chicken (chicken allergies are among the most common allergies – around 15% of dogs have it), so make sure yours is not before you give them the supplement.</li>
+
+            <li><strong>Dasuquin</strong><br>
+            Another brand by Nutramax, Dasuquin with MSM chewable tablets is an 84-count bottle containing 600 mg of Glucosamine HCL, 400 mg of Chondroitin Sulfate and 250 mg of MSM per tablet. Administering 2 tablets of this flavorless chewable tablet for a dog of under 60 lbs will give the best results.</li>
+
+            <li><strong>Vetrinex Labs</strong><br>
+            A leading pet supplement company offering an Advanced Joint Support solution for dogs. Each tablet contains the highest dose of active ingredients because of its SynoComplex Formula – 800 mg of Glucosamine HCL, 400 mg of Chondroitin Sulfate and 400 mg of MSM.<br>
+            This makes it the most potent. Because of the high quantity of active ingredients, only 1 tablet per day is needed for a 60 lbs dog.<br>
+            Advanced Joint Support is also a beef-flavored treat that dogs love and comes in a 120-count bottle, with one bottle lasting 4 months! Get a bottle of Vetrinex Advanced Joint Support to see results within as little as 6 weeks.</li>
+
+            <li><strong>Wuffes</strong><br>
+            Wuffes Advanced Hip & Joint Support is a soft chew containing 400 mg of Glucosamine HCL, 200 mg of MSM and 50 mg of Chondroitin Sulfate, a lesser amount of actives compared to the others on the list but loved by dogs who prefer soft chews! It is available in a 60-count bottle and is pork liver and honey flavored.</li>
+
+            <li><strong>Zesty Paws</strong><br>
+            Zesty Paws Mobility Bites Dog Joint Supplement contains 700 mg of Glucosamine HCL, 500 mg of MSM, and 270 mg of Chondroitin Sulfate. The 90-count bottle comes in multiple flavors, like bacon, chicken and duck. Give your 60-pound dog 2 of these tablets to see results.</li>
+          </ol>
+
+          <img src="images/js2.png" alt="js2.png" />
+
+          <h3>Why is Vetrinex Labs the Top Choice of Pet Parents?</h3>
+
+          <p>Vetrinex Labs Advanced Joint Support stands out as a top choice for dog parents seeking an effective and no-risk alternative. Here’s why:</p>
+
+          <ol>
+            <li><strong>The Ingredients</strong><br>
+            Vetrinex Labs’ Advanced Joint Support for dogs is a powerhouse of carefully selected ingredients, each playing a vital role in promoting joint health, mobility, and overall well-being:</li>
+          </ol>
+
+          <img src="images/js3.png" alt="js3.png" />
+
+          <ol start="2">
+            <li><strong>The Advantages</strong><br>
+            <ul>
+              <li><em>Comprehensive Joint Care:</em> Addresses joint stiffness, everyday joint stress, inflammation, and joint injuries, and is ideal for senior dogs experiencing age-related joint issues</li>
+              <li><em>Improved Mobility:</em> Enhances your dog’s ability to move comfortably and supports an active lifestyle. It also boosts joint injury and surgery recovery speed</li>
+              <li><em>Excellent for Aging Dogs with joint conditions:</em> Beneficial for combating pain associated with hip dysplasia and arthritis, supporting a pain-free and active life</li>
+              <li><em>Slows-down general wear & tear:</em> Reduces the negative impact of wear and tear accumulated over the years, and addresses reduced healing speed due to old age, preventing the development of joint issues.</li>
+            </ul>
+            </li>
+
+            <li><strong>Pricing and Value</strong><br>
+            Vetrinex Labs is a cost-effective solution with a supply that can last up to 4 months per bottle (120 tablets). Each chewable tablet has 1700mg+ of active ingredients.<br>
+            Your dog may require only one chewable tablet, unlike other brands that may require 2-4 chews daily. The cost per dose is as low as $0.35 a day and the company guarantees that you will see results in just one bottle.<br>
+            However, if you don’t see results at all, they will give you a 100% refund as per their Money-Back Guarantee!</li>
+
+            <li><strong>Happy Customers</strong><br>
+            Tens of thousands of pet parents have seen remarkable and revolutionary results in just 6 weeks of using Vetrinex Labs Advanced Joint Support. Here’s what customers have to say.</li>
+          </ol>
+
+          <img src="images/js4.png" alt="js4.png" />
+          <img src="images/js5.png" alt="js5.png" />
+
+          <h3>But… does your dog actually need a joint supplement?</h3>
+
+          <p>If you are still wondering if your dog even needs a joint supplement. Let’s take a closer look as to when and why your furry friend might need additional joint support:</p>
+
+          <p><strong>Senior Age and Diagnosed Conditions:</strong> If your dog has reached senior age or has been diagnosed with arthritis, hip dysplasia, or any joint-related medical issue, joint supplements can significantly aid in their comfort and pain management.</p>
+
+          <p><strong>Injuries:</strong> Post joint-surgery, joint supplements can act as a stimulus to quicker recovery, and can make sure that your dog regains their strength and mobility sooner.</p>
+
+          <h3>Visible signs that your dog’s joints are troubled:</h3>
+          <ol>
+            <li>Licking of Joints: Excessive licking of joints can be an early indicator that your dog is experiencing discomfort.</li>
+            <li>Reluctance to Play: If your once-playful pup starts hesitating or shows a reluctance to engage in play, it could be a sign of joint discomfort.</li>
+            <li>Shorter Walks: If your dog is cutting walks short or displaying signs of fatigue sooner than usual, it might be due to joint issues.</li>
+            <li>Difficulty Climbing: Struggling to climb stairs, beds or couches can be a clear sign of joint discomfort.</li>
+            <li>Limping & Stiffness: Occasional limping, even if it seems minor, should not be ignored, as it can be an early sign of joint problems.</li>
+          </ol>
+
+          <h3>What makes your dog a candidate for joint supplements:</h3>
+          <ol>
+            <li><strong>Senior Age (Over 7):</strong> Dogs over the age of 7 experience a natural and sometimes rapid decline in joint health. This decline comes from the accumulation of wear and tear coupled with their reduced healing speed putting them at risk of developing joint issues like arthritis.</li>
+
+            <li><strong>Active/Working/Sporting Dogs:</strong> Dogs leading an active lifestyle, engaging in activities or sports, are prone to higher levels of joint stress and injury. A good quality joint supplement can help prevent joint injuries by strengthening the joints and promote mobility and flexibility by reducing the impact of everyday wear and tear.</li>
+
+            <li><strong>Large Breed Category:</strong> Larger breeds, such as German Shepherds, Labrador Retrievers, St. Bernards, Newfoundlands, Golden Retrievers, and Great Danes, are predisposed to joint issues like dysplasia and the best way to get ahead is to start joint supplements early.</li>
+
+            <li><strong>Other Breed Predispositions:</strong> Certain breeds like Bulldogs, Dachshunds, Old English Sheepdogs, Mastiffs, Pugs, and Boxers, have inherent tendencies toward joint problems like hip dysplasia, shoulder issues, intervertebral disc disease (IVDD), and arthritis.</li>
+          </ol>
+
+          <h3>Why Early Intervention Matters:</h3>
+          <p>Joint problems often progress slowly and can go unnoticed until they reach more severe stages. Surprisingly, over 80% of dogs over the age of 8 suffer from osteoarthritis.</p>
+
+          <p>As a pet parent, consider joint supplements imperative to prevent joint issues and maintain your dog’s overall well-being.</p>
+
+          <h3>FREQUENTLY ASKED QUESTIONS</h3>
+          <p><strong>Q1 - Can joint supplements cure arthritis or degenerative joint diseases?</strong><br>
+          A1 - Degenerative joint diseases cannot be cured. However, joint supplements like the Vetrinex Advanced Joint Support, are extremely helpful in managing the pain and discomfort associated with these joint troubles and significantly slowing down the progression, so your dog becomes happier and healthier once again.</p>
+
+          <p><strong>Q2 - When should I start my dog on joint supplements?</strong><br>
+          A2 - It is never too early to get your dog on joint supplements, whatsoever! For adult or senior dogs showing symptoms of discomfort, or already having diagnosed joint problems like Arthritis or Hip Dysplasia, we recommend starting ASAP.</p>
+
+          <p><strong>Q3 - Can I combine joint supplements with my dog’s regular medication?</strong><br>
+          A3 - In most cases, joint supplements can be safely combined with other medications. However, always consult your veterinarian to ensure compatibility.</p>
+
+          <h3>Choose the best dog joint supplement</h3>
+          <p>Watch for the signs that indicate your dog might need joint support and consequently, take proactive measures to improve their overall well-being. Whether your furry friend is a senior companion, an active athlete, or a large breed, early intervention with joint supplements ensures they continue to lead a happy, healthy, and pain-free life. Remember to choose a supplement that not only provides a cost-effective solution, but one that is genuinely ready to help your dog with long-lasting results. We wish you a super happy and healthy life for your pooch!</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOG 3 -->
+    <section class="accordion" id="b3">
+      <button class="accordion-header" aria-controls="panel3" aria-expanded="false" onclick="toggleAccordion(event,'panel3','b3')">
+        <div class="accordion-title">Why Nolan prefers Practical Effects over CGI: A Breakdown</div>
+      </button>
+      <div id="panel3" class="panel">
+        <article class="blog">
+            <pre>
+            </pre>
+          <h2 style="text-align:center;">Why Nolan prefers Practical Effects over CGI: A Breakdown</h2>
+          <p><em>(For Ikarus 3D’s Website<br>Also Ranks at 3rd on Google Search)</em></p>
+
+          <p>Christopher Nolan is a wonderful example of old-school filmmaking in an age of computer effects. His use of actual effects instead of CGI shows his vision and passion. Nolan's aesthetic makes his films feel real.</p>
+
+          <img src="images/cgi1.png" alt="cgi1.png" />
+          <p class="caption"><em>Source: Cineva</em></p>
+
+          <p>Christopher Nolan is one of the most accomplished directors of today. One thing that makes him stand out is his use of practical effects over CGI. He often chooses to alter the real world with real equipment and real mechanics to get the perfect shot.</p>
+
+          <p>With the release of the much awaited film, Oppenheimer, Nolan has once again shown how he can do it the old way. Here’s more on why he chooses practical effects over CGI.</p>
+
+          <h3>Computer-Generated Imagery (CGI)</h3>
+          <p>Directors and cinematographers will go to lengths for one striking shot.</p>
+
+          <p>This shot can be strategically set up using the right props and the right landscape, and can be enhanced with CGI.</p>
+
+          <p>Computer-Generated Imagery (CGI) is the use of computer software to create new visuals or add visuals over existing media. CGI helps moviemakers bring life to characters, scenes, and entire movies and videogames. Movies, TV, advertising, design, engineering and virtual reality - there is no domain where CGI isn’t used.</p>
+
+          <p>There are several methods to develop CGI:</p>
+          <ol>
+            <li>Using algorithms to produce intricate fractal patterns.</li>
+            <li>Using 2D pixel-centric editors to generate vector designs.</li>
+            <li>Employing 3D graphics tools to:
+              <ul>
+                <li>Craft basic geometric objects.</li>
+                <li>Design intricate planar shapes using triangles and quadrilaterals.</li>
+              </ul>
+            </li>
+            <li>Using 3D software to simulate:
+              <ul>
+                <li>Light interacting with surfaces.</li>
+                <li>Effects of particles.</li>
+              </ul>
+            </li>
+            <li>Incorporating "compositing" techniques to merge computer-generated visuals with digital film clips.</li>
+            <li>The use of "green screen" has elevated the popularity of the technique.</li>
+          </ol>
+
+          <h3>The Origins of CGI</h3>
+          <img src="images/cgi2.png" alt="cgi2.png" />
+          <p>The origins of computer-generated imagery (CGI) can be traced back to the 1960s, with glimpses of its potential in Alfred Hitchcock's 1958 classic, "Vertigo."</p>
+
+          <p>The 1970s and 80s saw significant milestones, from "A Computer Animated Hand" in 1972 showcasing 3D graphics, to iconic films like "Star Wars" and "Tron" utilizing advanced visual techniques.</p>
+
+          <p>George Lucas' Industrial Light & Magic, established in 1975, became a driving force in this era of innovation.</p>
+
+          <p>The 1990s ushered in a new era of CGI with cinematic marvels like “Terminator 2” and “Toy Story.” As tech evolved, we saw the seamless blend of CGI characters and live actors, like in Peter Jackson's "Lord of the Rings."</p>
+
+          <p>By the time films like "The Avengers" arrived, a vast majority of their visuals were digital masterpieces, illustrating the astounding progression of CGI in cinema. “Avatar”, a film with heavy VFX and CGI is hailed as one of the most ambitious and extraordinary films of this time.</p>
+
+          <p>But even today, some directors like Christopher Nolan prefer practical effects over CGI. His new, mind-blowing (pun intended) film Oppenheimer boasted about having a CGI-Free Atomic Blast!</p>
+
+          <p>What’s so special about Practical Effects? Read on.</p>
+
+          <h3>Practical Effects</h3>
+          <p>A practical effect in movies refers to a special effect produced physically, without the use of computer-generated imagery (CGI) or other post-production techniques.</p>
+
+          <p>These effects are achieved on set during production and are captured "in-camera." This means that the effect is present and recorded in real-time as the scene is being filmed.</p>
+
+          <p>Examples of practical effects include prosthetics, miniature models, building sets and using stunt doubles.</p>
+
+          <p>For years, filmmakers, with the aid of ILM - a company founded in 1975 for the original Star Wars trilogy and also known for its work on the Indiana Jones series - used physical models and practical effects.</p>
+
+          <p>When directing Jurassic Park, Steven Spielberg cautiously integrated computer-generated imagery. Despite the film's two-hour length, CGI dinosaurs appeared for just six minutes, paired with animatronics and models.</p>
+
+          <h3>Christopher Nolan and Practical Effects</h3>
+          <img src="images/cgi3.png" alt="cgi3.png" />
+          <p>Stanley Kubrick is renowned to have used tremendous practical effects in his films. In his 1968 movie 2001: A Space Odyssey, Kubrick relied on large, detailed models for spaceships and giant rotating sets to establish the film’s environments and visuals.</p>
+
+          <p>Christopher Nolan has been inspired by Kubrik’s way of directing films.</p>
+
+          <p>Christopher Nolan stands as a cinematic maestro, blending age-old techniques with modern tales. His dedication to realism is evident in unforgettable sequences, like the gravity-defying rotating hallway in "Inception" or the authentic aerial stunts in "Dunkirk."</p>
+
+          <p>His unique aesthetic choices are evident throughout his films. He often utilizes deep, emotive shadows, lighting reminiscent of documentaries, and the authenticity of hand-held cameras.</p>
+
+          <p>His choice of natural settings and genuine filming locations over studios sets him apart. Interestingly, Nolan has red-green color blindness, which has shaped the palettes of many of his films.</p>
+
+          <p>Symbols and motifs play a pivotal role in Nolan's work, from mazes and geometric shapes to impossible constructions, all as part of practical effects. One iconic example is the Penrose stairs from "Inception," which illustrates the peculiarities of a dream world.</p>
+
+          <p>At the heart of Nolan's filmmaking is his belief in the power of realism. By grounding his movies in reality through relying on practical effects more than CGI, he ensures they remain engaging and rewatchable. For Nolan, when characters feel real, audiences connect with them on a profound level, making each viewing experience unforgettable.</p>
+
+          <h3>The Trends of CGI</h3>
+          <img src="images/cgi4.png" alt="cgi4.png" />
+          <p class="caption"><em>Source: Landmark Media</em></p>
+
+          <p>The cinematic world is at an intersection where the wonder of technology meets the heart of storytelling. With the rise of CGI, filmmakers have an unparalleled tool to use for making cinema more dynamic. But, as with all tools, it's how you use it that defines the outcome.</p>
+
+          <p>Franchises like the Marvel Cinematic Universe (MCU) and Star Wars stand as titans in the deployment of CGI. Think of Iron Man's armor, Spiderman's webs, the vastness of galaxies with Guardians of the Galaxy, or with iconic ships like the Millennium Falcon - these are all marvels birthed from CGI's magic.</p>
+
+          <p>But more isn't always better. The sheer power of CGI can, if unchecked, eclipse narrative depth.</p>
+
+          <p>For instance, while "The Avengers" adeptly married CGI with storytelling, others like "Age of Ultron" and "The Flash" have been critiqued for letting visual grandeur overshadow character and plot.</p>
+
+          <p>The detailed demands of comic-based narratives often push directors towards a more significant CGI reliance. It's easier, for instance, to digitally craft a scene or adjust a costume.</p>
+
+          <p>However, when CGI starts replacing the authenticity that practical effects or genuine locations bring, the result can feel fake rather than spectacular. Eyebrows have risen with movies like "Black Widow" where CGI-heavy scenes felt more artificial than authentic.</p>
+
+          <p>At the end of the day, audiences value the visual wonder CGI offers but not at the cost of character or story depth.</p>
+
+          <p>In this sense, Christopher Nolan is renowned for his commitment to authenticity, often opting for real-world settings to craft memorable scenes. A testament to this dedication is the prison scene in the opening of "Dark Knight Rises." Rather than relying on sets or CGI, Nolan chose the majestic Mehrangarh Fort in Rajasthan, India as his backdrop, traveling halfway across the globe for the scene.</p>
+
+          <h3>Striking a Balance between CGI and Practical Effects</h3>
+          <img src="images/cgi5.png" alt="cgi5.png" />
+          <p class="caption"><em>Source: https://www.thefactsite.com/</em></p>
+
+          <p>In the realm of filmmaking, striking a balance between CGI and practical effects is the prime topic of consideration. Both have their distinct strengths:</p>
+          <ul>
+            <li>CGI brings to life vivid visuals that escape even the brightest of minds and the most expansive of real-world landscapes.</li>
+            <li>Real-world settings and effects lend authenticity, gripping viewers in the most compelling manner.</li>
+          </ul>
+
+          <p>Viewers crave cinema that's devoid of glaring errors - where top-tier visuals, impeccable sets, and optimal conditions contrive the viewing experience.</p>
+
+          <p>The magic unfolds when there's harmony between CGI and practical effects. A touch of CGI paired with authentic real-world visuals can craft cinematic masterpieces. Renowned directors like Nolan and Cameron exemplify this balance, each in their distinctive style.</p>
+
+          <p>The cinematic future requires filmmakers to tread this delicate balance, ensuring movies aren't just visual spectacles but also narratives pulsating with emotion.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOG 4 -->
+    <section class="accordion" id="b4">
+      <button class="accordion-header" aria-controls="panel4" aria-expanded="false" onclick="toggleAccordion(event,'panel4','b4')">
+        <div class="accordion-title">Reddit and its one big power: Communities</div>
+      </button>
+      <div id="panel4" class="panel">
+        <article class="blog">
+            <pre>
+            </pre>
+          <h2 style="text-align:center;">Reddit and its one big power: Communities</h2>
+          <p><em>(For CEO Ishan Kumar Giddu’s LinkedIn)</em></p>
+
+          <img src="images/rc1.png" alt="rc1.png" />
+
+          <p><strong>Online platforms thrive on its communities.</strong></p>
+
+          <p>This aphorism has time and again been cut dead by multiple public platforms. The most recent one being Reddit.</p>
+
+          <p>When Reddit CEO Steve Huffman, a.k.a. Spez decided to charge third-party developers on the pretext that they needed to stop data scraping by AI companies, many saw through it and labelled it as a selfish cash grab move.</p>
+
+          <p>The following few weeks saw Subreddits staying strong to protest against the decision - from going private, to posting just John Oliver, to posting profanity and NSFW content, eventually leading to a blackout and rendering the platform practically useless.</p>
+
+          <p>But Spez didn’t back down, and his charging decision remains upheld as communities lose both the motivation and the willingness to continue protesting.</p>
+
+          <p><strong>But what was all of this for?</strong></p>
+
+          <p>Apollo, the app that used Reddit’s API had to shut down because it was unsustainable for it to pay $12,000 per 50 million requests - Apollo was making around 7 billion requests in one month alone. Which makes it around 20 million dollars by the end of the year.</p>
+
+          <p>Spez decided to replace community ownership of his platform with a huge revenue, and he won. But at what cost? He has already hit the most important thing that keeps his business running. That is, a loyal customer base and ownership of his product.</p>
+
+          <p><strong>What happens to the platform when its communities are disregarded?</strong></p>
+
+          <ul>
+            <li>This could most definitely be a short-term win for Spez, as the community won’t forget his stance and lead to shriveled interest in the platform itself.</li>
+            <li>The fall of third-party apps due to the pricing model which is unsustainable for them, will eventually lead to both the revenue model failing and the loss of community, making the platform obsolete.</li>
+            <li>Once communities shrink, it gets difficult to gain their trust back, and it leads to increased costs to acquire new people to join in and form a trustable community once again.</li>
+            <li>From driving traffic to spotting bugs, communities are an organic form of development for platforms. Once they become disinterested, platform costs are bound to increase.</li>
+            <li>While many may believe that the platform landscape isn’t a monopoly. I think it is. That’s the same reason Threads didn’t work - because X (Twitter) has a community that won’t budge. But while Reddit might not have a substitute and Spez rightly predicted that “it will pass”, the Subreddit mods - people that put in hard work to keep the platform running - are dissatisfied with being penalized instead of rewarded.</li>
+          </ul>
+
+          <p>Where content creators need to be compensated for their efforts, Spez is penalizing them, forgetting that the future is the content creators’ economy. Where content creators go, the audience goes.</p>
+
+          <p>Building a platform means you are committing to keep the community your top priority. With this in mind, we are also working on a project in stealth mode, which would bring 3D enthusiasts into one community.</p>
+
+          <p><strong>Rest assured, our platform will be built on the understanding that the people on it are its pillars.</strong></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOG 5 -->
+    <section class="accordion" id="b5">
+      <button class="accordion-header" aria-controls="panel5" aria-expanded="false" onclick="toggleAccordion(event,'panel5','b5')">
+        <div class="accordion-title">Photogrammetry in 3D Fashion Industry</div>
+      </button>
+      <div id="panel5" class="panel">
+        <article class="blog">
+            <pre>
+            </pre>
+          <h2 style="text-align:center;">Photogrammetry in 3D Fashion Industry</h2>
+          <p><em>(For Ikarus 3D’s Website)</em></p>
+
+          <p>The fashion industry has been quick at adopting 3D technology like photogrammetry. Take a look at the use of photogrammetry in the fashion industry.</p>
+
+          <img src="images/f3d1.png" alt="f3d1.png" />
+          <p class="caption"><em>Photogrammetry is the capture of 2D photos from all the angles</em></p>
+
+          <p>In 2011, 3D artist Kev Stenning broke ground in fashion photogrammetry by scanning Guinness in her Gareth Pugh costume. By 2020, her scans were 3D printed as the 'first form model' in the fashion industry.</p>
+
+          <p>This is not a one-and-only case. Fashion has been quick at adopting 3D technology like photogrammetry in its design process.</p>
+
+          <p>Being inherently creative and experimental, it is an industry ever-ready to absorb any innovation that materializes in technology.</p>
+
+          <img src="images/f3d2.jpg" alt="f3d2.jpg" />
+          <p class="caption"><em>The basic setup of Photogrammetry from various angles</em></p>
+
+          <p>The concept of Photogrammetry isn't new. However, in the early 21st century, its applications were limited to engineering, medical devices, construction, healthcare, and automobiles.</p>
+
+          <p>With the technological advancements in 3D printing, 3D modeling, and photography, photogrammetry has opened the path to new and improved working in different sectors.</p>
+
+          <p>Before we dive into the applications of photogrammetry in fashion, let’s understand what exactly photogrammetry is.</p>
+
+          <h3>What is Photogrammetry?</h3>
+          <p>Although the word Photogrammetry is a lengthy-term, we break it into three parts to understand its basic meaning:</p>
+          <ol>
+            <li>'Photo' means light</li>
+            <li>'Gram' means drawing</li>
+            <li>'Metry' means measurement.</li>
+          </ol>
+
+          <p>So in simple terms, 3D Photogrammetry is the process of creating drawings or 3D models of objects using different measurements taken from photographs or recordings.</p>
+
+          <p>It is believed that the basic principle of Photogrammetry was known even to Leonardo da Vinci in the 1480s, yet there is little evidence as to whether he was able to make a working model for the same.</p>
+
+          <h3>What is involved in Photogrammetry?</h3>
+          <p>Multiple cameras are positioned at different points around the object to capture its surface from all angles. These pictures are stitched together and processed by a photogrammetry software, with the help of algorithms and mathematical calculations, to create a 3D model.</p>
+
+          <p>The primary principle involved is Triangulation.</p>
+
+          <p>Triangulation involves using at least two scanning points for an object. The cameras are positioned at these points, and each has a line of sight that meets the object. The line of sight from both the cameras intersects at a particular point on the object, which is useful for mathematical calculations.</p>
+
+          <p>This is just for one minuscule point on an object! We need more cameras and even more orientations to trace the entire surface of the object.</p>
+
+          <p>Sophisticated setups are used for Photogrammetry, including rigs and flash systems in a controlled room. The rigs are fitted with numerous cameras focusing on the object from each angle.</p>
+
+          <p>Experts say that the cameras used as photogrammetry scanners can be DSLRs with 50mm lenses and a 24 MP sensor. However, photogrammetry can also be achieved at the basic level with phone cameras!</p>
+
+          <p>Photogrammetry is applied in gaming, 3D movies, Augmented Reality and Virtual Reality experiences, and product visualizations.</p>
+
+          <h3>Applications of Photogrammetry</h3>
+          <p>Here are just a few of the many sectors where Photogrammetry plays an important role:</p>
+          <ol>
+            <li>Construction</li>
+            <li>Military</li>
+            <li>Sports</li>
+            <li>Forensics</li>
+            <li>Fashion</li>
+          </ol>
+
+          <p><strong>Construction:</strong> The most common application has been civil surveying for engineering and construction projects. Terrestrial Photogrammetry is used in cases where the scanners' axes are parallel to the Earth and positions are fixed.</p>
+
+          <img src="images/f3d3.png" alt="f3d3.png" />
+          <p class="caption"><em>Triangulation in aerial photogrammetry of a landscape</em></p>
+
+          <p><strong>Military:</strong> To gather landscape data for military purposes, aerial Photogrammetry is utilised. Scanners are positioned in planes or drones that are perpendicular to the ground, capturing images in a bird's-eye view.</p>
+
+          <img src="images/f3d4.png" alt="f3d4.png" />
+          <p class="caption"><em>Aerial Photogrammetry of a landscape</em></p>
+
+          <p><strong>Sports:</strong> Scanning sportspersons in action is useful for coaches and individuals in analysing their technique, form, and body movement. These inputs are beneficial for them in improving their game and providing training to others.</p>
+
+          <img src="images/f3d5.png" alt="f3d5.png" />
+          <p class="caption"><em>Use of Photogrammetry in Sports helps Individuals</em></p>
+
+          <p><strong>Forensics:</strong> Using photogrammetry, measurements and precise details of the objects in question or the crime scene are documented and preserved for conducting the research and presenting the evidence to the court.</p>
+
+          <img src="images/f3d6.png" alt="f3d6.png" />
+          <p class="caption"><em>Use of Photogrammetry in forensics</em></p>
+
+          <h3>Photogrammetry in fashion</h3>
+          <p>The pioneer in the field of Photogrammetry in Fashion has been Matthew Drinkwater, who brought 3D scanning into online retail. Drinkwater successfully created a 3D fashion model design from images taken of a model walking the catwalk.</p>
+
+          <p>This opens the doors for online retail owners to showcase their products in a more realistic and 3D form. The future of online apparel shopping is no longer limited to the generic 2D pictures that don’t display the product accurately.</p>
+
+          <p>With Photogrammetry, shoppers can experience the products in a personalized manner.</p>
+
+          <ol>
+            <li><strong>Body shape and size:</strong> With algorithms in place, 3D software can now define common body shapes and sizes across the population using geometric figures. This can help customers identify their body shape before making an online purchase.</li>
+            <li><strong>Fit:</strong> Comprehensive scanning of clothed figures can create 3D clothing models that focus on the product's fit on the body. It is useful in highlighting issues of cloth folding and wrinkling.</li>
+            <li><strong>3D clothing design:</strong> Using pre-existing patterns from a database, new patterns can be altered to fit the individual based on the measurements captured from body scanners. Another similar approach is analysing the individual's measurements to create a mannequin model, over which different clothing patterns are applied for fit.</li>
+            <li><strong>3D product visualisation:</strong> Using parametric approaches similar to clothing design, design stores can demonstrate new products over virtual mannequins or avatars, to their clients and customers, before manufacturing. This is achieved by wrapping the patterns over the avatars using modeling systems to visualise cloth draping. Photogrammetry has enabled wider adaptation of virtual try-ons in fashion retail, allowing customers to experience the product without so much as touching it in real life!</li>
+          </ol>
+
+          <h3>The Future of Photogrammetry in fashion</h3>
+          <p>3D Photogrammetry makes it simpler for designers to create realistic and quality products. Extensive detailing of products regarding texture, fit, curvatures, etc., makes it easier for designers to express their invention.</p>
+
+          <p>Body scanning provides accurate information regarding body fit and size for shoppers. Incorporating these scanning systems into retail stores will be a dramatic step forward. Accurately knowing body shape, size, and fit will allow a better shopping experience in retail stores.</p>
+
+          <p>Even with online 3D models of clothes, shoppers will have the ability for virtual try-on, assimilated in the entire store's Augmented Reality.</p>
+
+          <p>In 2022, Justin Ridler took to Photogrammetry by Avatar Factory to get the model Astrid Holler’s 3D version on the covers of Vogue China. Using multi-camera photogrammetry, the team captured the Australian model, generated a 3D model out of her and then ‘modeled’ her in stunning virtual environments and clothing!</p>
+
+          <p>This is only the beginning. Thoroughly explored and initiated, Photogrammetry can bring new opportunities in the world of fashion.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOG 6 -->
+    <section class="accordion" id="b6">
+      <button class="accordion-header" aria-controls="panel6" aria-expanded="false" onclick="toggleAccordion(event,'panel6','b6')">
+        <div class="accordion-title">Case Clos3D: How 3D Technology has Proven (and Disproven) Cases</div>
+      </button>
+      <div id="panel6" class="panel">
+        <article class="blog">
+            <pre>
+            </pre>
+          <h2 style="text-align:center;">Case Clos3D: How 3D Technology has Proven (and Disproven) Cases</h2>
+          <p><em>(For Ikarus 3D’s Website and LinkedIn)</em></p>
+
+          <p>3D technology has come about as one of the most important tools of investigation. Learn how it has proven and disproven cases.</p>
+
+          <img src="images/cc1.jpg" alt="cc1.jpg" />
+
+          <p>When you do not have eyewitnesses or clear evidence, cases can be harder to solve.</p>
+
+          <p>But what if you had an ally that's omnipresent, and never skipped a detail?</p>
+
+          <p>Oftentimes, conventional techniques provide limited results when used on complex cases. It is then that technology lends a helping hand to crime and forensic investigators.</p>
+
+          <p>One such branch of novel technology is 3D, complementing, and in some cases even replacing traditional forms of investigation.</p>
+
+          <img src="images/cc2.jpg" alt="cc2.jpg" />
+
+          <h3>The 3 elements of 3D</h3>
+          <p>Generally, there are 3 major ways 3D is used in investigation, forensics and evidence gathering. These include:</p>
+
+          <ol>
+            <li>3D Scanning</li>
+            <li>3D Modeling</li>
+            <li>3D Printing</li>
+          </ol>
+
+          <p>3D scans, 3D modeling and 3D printing can reconstruct accidents so that they can be better observed, and can help fill in the gaps between missing evidence.</p>
+
+          <p>Facial reconstruction and understanding the impact of a weapon’s force on the victim’s body is made easier, so that justice prevails by accurate revelations.</p>
+
+          <img src="images/cc3.jpg" alt="cc3.jpg" />
+
+          <p>But before we go into some exciting examples of 3D in crime fighting, let us explore each of these processes.</p>
+
+          <h4>3D Scanning</h4>
+          <p>3D scanning is the process of analyzing and recreating a real-world object, situation or environment. It can be used both to collect data on the shape and appearance and to construct a virtual representation.</p>
+
+          <p>The collected data is also often used to construct digital 3D models.</p>
+
+          <p>Because of its precision, 3D scanning technology can reveal minute, high quality details that could be missed with the naked eye or traditional forensic techniques.</p>
+
+          <h4>3D Modeling</h4>
+          <p>3D modeling is the craft of using specialized computer software to create three-dimensional representations of an object or a surface.</p>
+
+          <p>It involves the manipulation of edges, vertices, and polygons in a simulated 3D space. You can determine an object’s size, shape, and even texture.</p>
+
+          <p>3D modeling using computer aided software (CAD) can generate detailed models of otherwise unavailable or unclear evidence.</p>
+
+          <h4>3D printing</h4>
+          <p>3D printing is the creation of three-dimensional solid objects using a digital 3D model file. In simple terms, it involves the deposition of appropriate material over powdered grains, plastics, or even liquids, to fuse them into a homogenous layer.</p>
+
+          <p>These layers are then made to solidify in a controlled environment, to create models that mimic real-life figures. 3D printing brings evidence found digitally to real life, and allows for an accurate presentation in court, leading to a correct judgement as to whether someone is guilty or innocent.</p>
+
+          <h3>The Crime Fighting Companion</h3>
+          <p>So what are the various areas in crime investigation that have witnessed improved performance with 3D technology? Here are some uses of 3D technology.</p>
+
+          <ol>
+            <li>Ballistic reconstructions</li>
+            <li>Forensic medicine</li>
+            <li>Forensic anthropology</li>
+          </ol>
+
+          <h4>Ballistic reconstructions</h4>
+          <p>Digital imaging techniques can precisely reconstruct bullet trajectories- a crucial element in analysing a sequence of events.</p>
+
+          <h4>Forensic medicine</h4>
+          <p>Forensic medicine depends heavily on 3D printing. 3D printing can help create precise, highly detailed models of anatomy, to aid medical students and train medical staff.</p>
+
+          <h4>Forensic anthropology</h4>
+          <p>In combination with volumetric imaging, 3D printing can construct physical replicas of internal bony structures with microscopic precision.</p>
+
+          <img src="images/cc4.png" alt="cc4.png" />
+
+          <h3>Success Stories</h3>
+
+          <p>And that brings us to the most (morbidly) exciting segment of this blog. Here we explore some cases that would have stayed unsolved without the use of 3D.</p>
+
+          <p>Let’s talk about some instances when 3D technology came to the rescue.</p>
+
+          <h4>Microscopic mistake</h4>
+          <p>Such was the case of Abigail Palmer when she was found guilty of murdering her child in 2019.</p>
+
+          <p>Her crime was substantiated only after 3D scan images were able to reveal microscopic injuries to the skeleton of the victim, which were otherwise completely concealed in regular CT scans. Thanks to the technology, Abigail Palmer was rightfully convicted of manslaughter.</p>
+
+          <h4>Reconstructing the Rampage</h4>
+          <p>In 2015, Lorenzo Simon was proven to be guilty of murdering his tenant after 3D scanning revealed strong enough evidence - pieces of the victim’s bones from a suitcase, and an oil drum behind Lorenzo’s house fit perfectly, which investigators were able to figure out by displaying the 3D images onto a virtual reality wall.</p>
+
+          <p>The technique also confirmed lacerations caused by the murder weapon, and they were able to present this evidence in court by 3D printing the bones.</p>
+
+          <h4>Cracking the code</h4>
+          <p>Another case was that of Ellie Butler’s murder in 2013. It was only after two of her skull’s replicas were 3D printed, were the circumstances of the murder revealed.</p>
+
+          <p>The 3D technology disclosed the wound’s shape, showing that the crime was committed using a claw hammer - proving it to be the murder weapon and sending the murderer Ben Butler to prison, which otherwise would not have been possible despite Butler’s violent history.</p>
+
+          <h4>Debunking conspiracy theories</h4>
+          <p>So is 3D only used to solve crimes? Or can it be also used to clear misconceptions and hysteria.</p>
+
+          <p>Perhaps one of the most controversial and debated cases in history belongs to the assassination of John F. Kennedy in 1963. An event that rocked the world, it has since been shrouded in conspiracy theories. The biggest one is that the infamous Lee Harvey Oswald is not his killer - despite evidence stating that he is.</p>
+
+          <p>The masses believe that a picture of Oswald holding the murder weapon, 6.5 mm Carcano rifle, has been photoshopped to frame him, as his posture and shadows look fake.</p>
+
+          <p>Hany Farid, professor at University of California, specializing in digital forensics, in his 2015 research, reconstructed the entire scene in the picture with 3D modeling.</p>
+
+          <p>Using the exact position of the light source, precise measurements of Oswald’s and the gun’s height and weight, he and his team disproved the conspiracy theory by showing that the shadows and his posture were indeed completely fine, and that the picture was never altered.</p>
+
+          <h3>End Note</h3>
+          <p>3D technology has come about as one of the most important tools of investigation against carefully planned crimes, and for an accurate judgement against offenders. Eyes of the 3D technology miss nothing, and have proven to validate evidence in courts, gaining confidence of those who seek justice.</p>
+
+          <p>3D modeling, scanning and printing has assisted not only corporate strategies, but government, legal, investigative and law enforcement workings as well.</p>
+
+          <p>In the near future, rather than just being an option or a last resort, 3D tech might become a necessity to ensure accuracy and precision in criminal investigations and judgements.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Accordion JS (simple, smooth expand/collapse) -->
+  <script>
+    function toggleAccordion(e, panelId, accId){
+      // Toggle class & aria-expanded on header
+      const acc = document.getElementById(accId);
+      const panel = document.getElementById(panelId);
+      const isOpen = acc.classList.contains('open');
+
+      if(!isOpen){
+        acc.classList.add('open');
+        // expand
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        // mark aria
+        const hdr = acc.querySelector('.accordion-header');
+        if(hdr) hdr.setAttribute('aria-expanded','true');
+      } else {
+        acc.classList.remove('open');
+        panel.style.maxHeight = null;
+        const hdr = acc.querySelector('.accordion-header');
+        if(hdr) hdr.setAttribute('aria-expanded','false');
+      }
+    }
+
+    // ensure panels collapse on load (useful after refresh)
+    document.addEventListener('DOMContentLoaded', () => {
+      const panels = document.querySelectorAll('.panel');
+      panels.forEach(p => p.style.maxHeight = null);
+    });
+  </script>
+</body>
+</html>
