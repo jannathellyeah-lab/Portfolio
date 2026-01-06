@@ -169,8 +169,7 @@
   <main class="container">
 
     <!-- BLOG 1 -->
-    <section class="accordion" id="b1">
-      <button class="accordion-header" aria-controls="panel1" aria-expanded="false" onclick="toggleAccordion(event,'panel1','b1')">
+    <button class="accordion-header" aria-expanded="false">
         <div class="accordion-title">Disney vs. DreamWorks: The Tussle for the Tales</div>
       </button>
       <div id="panel1" class="panel">
@@ -282,8 +281,7 @@
     </section>
 
     <!-- BLOG 2 -->
-    <section class="accordion" id="b2">
-      <button class="accordion-header" aria-controls="panel2" aria-expanded="false" onclick="toggleAccordion(event,'panel2','b2')">
+    <button class="accordion-header" aria-expanded="false">
         <div class="accordion-title">Best Joint Supplement for your Dog: Comprehensive Guide to give your Dog the Best Care</div>
       </button>
       <div id="panel2" class="panel">
@@ -466,8 +464,7 @@
     </section>
 
     <!-- BLOG 3 -->
-    <section class="accordion" id="b3">
-      <button class="accordion-header" aria-controls="panel3" aria-expanded="false" onclick="toggleAccordion(event,'panel3','b3')">
+   <button class="accordion-header" aria-expanded="false">
         <div class="accordion-title">Why Nolan prefers Practical Effects over CGI: A Breakdown</div>
       </button>
       <div id="panel3" class="panel">
@@ -596,8 +593,7 @@
     </section>
 
     <!-- BLOG 4 -->
-    <section class="accordion" id="b4">
-      <button class="accordion-header" aria-controls="panel4" aria-expanded="false" onclick="toggleAccordion(event,'panel4','b4')">
+    <button class="accordion-header" aria-expanded="false">
         <div class="accordion-title">Reddit and its one big power: Communities</div>
       </button>
       <div id="panel4" class="panel">
@@ -645,8 +641,7 @@
     </section>
 
     <!-- BLOG 5 -->
-    <section class="accordion" id="b5">
-      <button class="accordion-header" aria-controls="panel5" aria-expanded="false" onclick="toggleAccordion(event,'panel5','b5')">
+    <button class="accordion-header" aria-expanded="false">
         <div class="accordion-title">Photogrammetry in 3D Fashion Industry</div>
       </button>
       <div id="panel5" class="panel">
@@ -762,8 +757,7 @@
     </section>
 
     <!-- BLOG 6 -->
-    <section class="accordion" id="b6">
-      <button class="accordion-header" aria-controls="panel6" aria-expanded="false" onclick="toggleAccordion(event,'panel6','b6')">
+    <button class="accordion-header" aria-expanded="false">
         <div class="accordion-title">Case Clos3D: How 3D Technology has Proven (and Disproven) Cases</div>
       </button>
       <div id="panel6" class="panel">
@@ -886,11 +880,7 @@
     </section>
 
      <!-- BLOG 7 -->
-    <section class="accordion" id="b7">
-  <button class="accordion-header"
-    aria-controls="panel7"
-    aria-expanded="false"
-    onclick="toggleAccordion(event,'panel7','b7')">
+    <button class="accordion-header" aria-expanded="false">
     <div class="accordion-title">EcoVadis Assessment: The Complete Business Guide </div>
       </button>
       <div id="panel7" class="panel">
@@ -1057,11 +1047,7 @@
     </section>
 
        <!-- BLOG 8 -->
-   <section class="accordion" id="b8">
-  <button class="accordion-header"
-    aria-controls="panel8"
-    aria-expanded="false"
-    onclick="toggleAccordion(event,'panel8','b8')">
+   <button class="accordion-header" aria-expanded="false">
     <div class="accordion-title">Resilience at Work: 
 Why Emotional Wellbeing is the New Productivity Metric </div>
       </button>
@@ -1180,32 +1166,32 @@ Why Emotional Wellbeing is the New Productivity Metric</h2>
 
   <!-- Accordion JS (simple, smooth expand/collapse) -->
   <script>
-    function toggleAccordion(e, panelId, accId){
-      // Toggle class & aria-expanded on header
-      const acc = document.getElementById(accId);
-      const panel = document.getElementById(panelId);
-      const isOpen = acc.classList.contains('open');
+  document.addEventListener('click', function (e) {
+    const header = e.target.closest('.accordion-header');
+    if (!header) return;
 
-      if(!isOpen){
-        acc.classList.add('open');
-        // expand
-        panel.style.maxHeight = panel.scrollHeight + "px";
-        // mark aria
-        const hdr = acc.querySelector('.accordion-header');
-        if(hdr) hdr.setAttribute('aria-expanded','true');
-      } else {
-        acc.classList.remove('open');
-        panel.style.maxHeight = null;
-        const hdr = acc.querySelector('.accordion-header');
-        if(hdr) hdr.setAttribute('aria-expanded','false');
-      }
+    const accordion = header.closest('.accordion');
+    const panel = accordion.querySelector('.panel');
+    const isOpen = accordion.classList.contains('open');
+
+    if (isOpen) {
+      accordion.classList.remove('open');
+      panel.style.maxHeight = null;
+      header.setAttribute('aria-expanded', 'false');
+    } else {
+      accordion.classList.add('open');
+      panel.style.maxHeight = 'none'; // supports long content + images
+      header.setAttribute('aria-expanded', 'true');
     }
+  });
 
-    // ensure panels collapse on load (useful after refresh)
-    document.addEventListener('DOMContentLoaded', () => {
-      const panels = document.querySelectorAll('.panel');
-      panels.forEach(p => p.style.maxHeight = null);
+  // collapse all on load
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.panel').forEach(p => {
+      p.style.maxHeight = null;
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
