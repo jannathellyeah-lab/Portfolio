@@ -128,6 +128,11 @@
       transition: max-height 350ms ease;
     }
 
+    .accordion.open .panel {
+  overflow: visible;
+}
+
+
     /* blog content styling (uses same fonts/colors as site) */
     .blog h2, .blog h3{ color: var(--primary); font-family: "Poppins", sans-serif; }
     .blog h2{ font-size: 1.15rem; margin-bottom: .6rem; }
@@ -1189,40 +1194,40 @@ Why Emotional Wellbeing is the New Productivity Metric</h2>
 
   <!-- Accordion JS (simple, smooth expand/collapse) -->
   <script>
-  document.addEventListener('click', function (e) {
-    const header = e.target.closest('.accordion-header');
-    if (!header) return;
+document.addEventListener('click', function (e) {
+  const header = e.target.closest('.accordion-header');
+  if (!header) return;
 
-    const accordion = header.closest('.accordion');
-    const panel = accordion.querySelector('.panel');
-    const isOpen = accordion.classList.contains('open');
+  const accordion = header.closest('.accordion');
+  const panel = accordion.querySelector('.panel');
+  const isOpen = accordion.classList.contains('open');
 
-    if (isOpen) {
-      accordion.classList.remove('open');
-      panel.style.maxHeight = null;
-      header.setAttribute('aria-expanded', 'false');
-   } else {
   // close all others
   document.querySelectorAll('.accordion.open').forEach(acc => {
-    acc.classList.remove('open');
-    acc.querySelector('.panel').style.maxHeight = null;
-    acc.querySelector('.accordion-header')
-       .setAttribute('aria-expanded', 'false');
+    if (acc !== accordion) {
+      acc.classList.remove('open');
+      const p = acc.querySelector('.panel');
+      p.style.maxHeight = '0px';
+      acc.querySelector('.accordion-header')
+         .setAttribute('aria-expanded', 'false');
+    }
   });
 
-  accordion.classList.add('open');
-  panel.style.maxHeight = 'none';
-  header.setAttribute('aria-expanded', 'true');
-}
-  });
+  if (isOpen) {
+    accordion.classList.remove('open');
+    panel.style.maxHeight = '0px';
+    header.setAttribute('aria-expanded', 'false');
+  } else {
+    accordion.classList.add('open');
 
-  // collapse all on load
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.panel').forEach(p => {
-      p.style.maxHeight = null;
-    });
-  });
+    // FORCE recalculation before setting height
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+
+    header.setAttribute('aria-expanded', 'true');
+  }
+});
 </script>
+
 
 </body>
 </html>
