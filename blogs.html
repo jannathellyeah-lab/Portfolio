@@ -120,13 +120,15 @@
     }
 
     .panel {
-      padding: 1.25rem 1.25rem;
-      border-top: 1px solid rgba(0,0,0,0.03);
-      background: linear-gradient(180deg, #fff 0%, #fbfbfb 100%);
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 350ms ease;
-    }
+  padding: 1.25rem 1.25rem;
+  border-top: 1px solid rgba(0,0,0,0.03);
+  background: linear-gradient(180deg, #fff 0%, #fbfbfb 100%);
+}
+
+.panel[hidden] {
+  display: none;
+}
+
 
     .accordion.open .panel {
   overflow: visible;
@@ -179,7 +181,7 @@
     <div class="accordion-title">Disney vs. DreamWorks: The Tussle for the Tales</div>
   </button>
 
-  <div class="panel">
+  <div class="panel" hidden> 
         <article class="blog">
             <pre>
             </pre>
@@ -293,7 +295,7 @@
     <div class="accordion-title">Best Joint Supplement for your Dog: Comprehensive Guide to give your Dog the Best Care</div>
   </button>
 
-  <div class="panel">
+ <div class="panel" hidden>
      
         <article class="blog">
             <pre>
@@ -479,7 +481,7 @@
     <div class="accordion-title">Why Nolan prefers Practical Effects over CGI: A Breakdown</div>
   </button>
 
-  <div class="panel">
+  <div class="panel" hidden>
       
         <article class="blog">
             <pre>
@@ -611,7 +613,7 @@
     <div class="accordion-title">Reddit and its one big power: Communities</div>
   </button>
 
-  <div class="panel">
+  <div class="panel" hidden>
       
         <article class="blog">
             <pre>
@@ -662,7 +664,7 @@
     <div class="accordion-title">Photogrammetry in 3D Fashion Industry</div>
   </button>
 
-  <div class="panel">
+  <div class="panel" hidden>
       
         <article class="blog">
             <pre>
@@ -781,7 +783,7 @@
     <div class="accordion-title">Case Clos3D: How 3D Technology has Proven (and Disproven) Cases</div>
   </button>
 
-  <div class="panel">
+  <div class="panel" hidden>
       
         <article class="blog">
             <pre>
@@ -907,7 +909,7 @@
     <div class="accordion-title">EcoVadis Assessment: The Complete Business Guide</div>
   </button>
 
-  <div class="panel">
+  <div class="panel" hidden>
      
         <article class="blog">
             <pre>
@@ -1078,7 +1080,7 @@
 Why Emotional Wellbeing is the New Productivity Metric </div>
   </button>
 
-  <div class="panel">
+ <div class="panel" hidden>
      
         <article class="blog">
             <pre>
@@ -1200,33 +1202,24 @@ document.addEventListener('click', function (e) {
 
   const accordion = header.closest('.accordion');
   const panel = accordion.querySelector('.panel');
-  const isOpen = accordion.classList.contains('open');
+  const isOpen = !panel.hasAttribute('hidden');
 
-  // close all others
-  document.querySelectorAll('.accordion.open').forEach(acc => {
-    if (acc !== accordion) {
-      acc.classList.remove('open');
-      const p = acc.querySelector('.panel');
-      p.style.maxHeight = '0px';
-      acc.querySelector('.accordion-header')
-         .setAttribute('aria-expanded', 'false');
-    }
+  // Close all panels
+  document.querySelectorAll('.accordion .panel').forEach(p => {
+    p.setAttribute('hidden', '');
+    p.closest('.accordion')
+     .querySelector('.accordion-header')
+     .setAttribute('aria-expanded', 'false');
   });
 
-  if (isOpen) {
-    accordion.classList.remove('open');
-    panel.style.maxHeight = '0px';
-    header.setAttribute('aria-expanded', 'false');
-  } else {
-    accordion.classList.add('open');
-
-    // FORCE recalculation before setting height
-    panel.style.maxHeight = panel.scrollHeight + 'px';
-
+  // Toggle current
+  if (!isOpen) {
+    panel.removeAttribute('hidden');
     header.setAttribute('aria-expanded', 'true');
   }
 });
 </script>
+
 
 
 </body>
