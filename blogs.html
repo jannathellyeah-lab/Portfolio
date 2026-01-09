@@ -169,10 +169,12 @@
   <main class="container">
 
     <!-- BLOG 1 -->
-    <button class="accordion-header" aria-expanded="false">
-        <div class="accordion-title">Disney vs. DreamWorks: The Tussle for the Tales</div>
-      </button>
-      <div id="panel1" class="panel">
+    <section class="accordion">
+  <button class="accordion-header" aria-expanded="false">
+    <div class="accordion-title">Disney vs. DreamWorks: The Tussle for the Tales</div>
+  </button>
+
+  <div class="panel">
         <article class="blog">
             <pre>
             </pre>
@@ -281,10 +283,13 @@
     </section>
 
     <!-- BLOG 2 -->
-    <button class="accordion-header" aria-expanded="false">
-        <div class="accordion-title">Best Joint Supplement for your Dog: Comprehensive Guide to give your Dog the Best Care</div>
-      </button>
-      <div id="panel2" class="panel">
+    <section class="accordion">
+  <button class="accordion-header" aria-expanded="false">
+    <div class="accordion-title">Best Joint Supplement for your Dog: Comprehensive Guide to give your Dog the Best Care</div>
+  </button>
+
+  <div class="panel">
+     
         <article class="blog">
             <pre>
             </pre>
@@ -464,10 +469,13 @@
     </section>
 
     <!-- BLOG 3 -->
-   <button class="accordion-header" aria-expanded="false">
-        <div class="accordion-title">Why Nolan prefers Practical Effects over CGI: A Breakdown</div>
-      </button>
-      <div id="panel3" class="panel">
+   <section class="accordion">
+  <button class="accordion-header" aria-expanded="false">
+    <div class="accordion-title">Why Nolan prefers Practical Effects over CGI: A Breakdown</div>
+  </button>
+
+  <div class="panel">
+      
         <article class="blog">
             <pre>
             </pre>
@@ -593,10 +601,13 @@
     </section>
 
     <!-- BLOG 4 -->
-    <button class="accordion-header" aria-expanded="false">
-        <div class="accordion-title">Reddit and its one big power: Communities</div>
-      </button>
-      <div id="panel4" class="panel">
+   <section class="accordion">
+  <button class="accordion-header" aria-expanded="false">
+    <div class="accordion-title">Reddit and its one big power: Communities</div>
+  </button>
+
+  <div class="panel">
+      
         <article class="blog">
             <pre>
             </pre>
@@ -641,10 +652,13 @@
     </section>
 
     <!-- BLOG 5 -->
-    <button class="accordion-header" aria-expanded="false">
-        <div class="accordion-title">Photogrammetry in 3D Fashion Industry</div>
-      </button>
-      <div id="panel5" class="panel">
+   <section class="accordion">
+  <button class="accordion-header" aria-expanded="false">
+    <div class="accordion-title">Photogrammetry in 3D Fashion Industry</div>
+  </button>
+
+  <div class="panel">
+      
         <article class="blog">
             <pre>
             </pre>
@@ -757,10 +771,13 @@
     </section>
 
     <!-- BLOG 6 -->
-    <button class="accordion-header" aria-expanded="false">
-        <div class="accordion-title">Case Clos3D: How 3D Technology has Proven (and Disproven) Cases</div>
-      </button>
-      <div id="panel6" class="panel">
+   <section class="accordion">
+  <button class="accordion-header" aria-expanded="false">
+    <div class="accordion-title">Case Clos3D: How 3D Technology has Proven (and Disproven) Cases</div>
+  </button>
+
+  <div class="panel">
+      
         <article class="blog">
             <pre>
             </pre>
@@ -880,10 +897,13 @@
     </section>
 
      <!-- BLOG 7 -->
-    <button class="accordion-header" aria-expanded="false">
-    <div class="accordion-title">EcoVadis Assessment: The Complete Business Guide </div>
-      </button>
-      <div id="panel7" class="panel">
+   <section class="accordion">
+  <button class="accordion-header" aria-expanded="false">
+    <div class="accordion-title">EcoVadis Assessment: The Complete Business Guide</div>
+  </button>
+
+  <div class="panel">
+     
         <article class="blog">
             <pre>
             </pre>
@@ -1047,11 +1067,14 @@
     </section>
 
        <!-- BLOG 8 -->
-   <button class="accordion-header" aria-expanded="false">
+  <section class="accordion">
+  <button class="accordion-header" aria-expanded="false">
     <div class="accordion-title">Resilience at Work: 
 Why Emotional Wellbeing is the New Productivity Metric </div>
-      </button>
-        <div id="panel8" class="panel">
+  </button>
+
+  <div class="panel">
+     
         <article class="blog">
             <pre>
             </pre>
@@ -1178,11 +1201,19 @@ Why Emotional Wellbeing is the New Productivity Metric</h2>
       accordion.classList.remove('open');
       panel.style.maxHeight = null;
       header.setAttribute('aria-expanded', 'false');
-    } else {
-      accordion.classList.add('open');
-      panel.style.maxHeight = 'none'; // supports long content + images
-      header.setAttribute('aria-expanded', 'true');
-    }
+   } else {
+  // close all others
+  document.querySelectorAll('.accordion.open').forEach(acc => {
+    acc.classList.remove('open');
+    acc.querySelector('.panel').style.maxHeight = null;
+    acc.querySelector('.accordion-header')
+       .setAttribute('aria-expanded', 'false');
+  });
+
+  accordion.classList.add('open');
+  panel.style.maxHeight = 'none';
+  header.setAttribute('aria-expanded', 'true');
+}
   });
 
   // collapse all on load
